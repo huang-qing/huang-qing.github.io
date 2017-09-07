@@ -1,6 +1,6 @@
 # Site settings
-title: HUANG QING Blog
-SEOTitle: 黄庆的博客 | HUANG QING Blog
+title: HUANG QING BLOG
+SEOTitle: 黄庆的博客 | HUANG QING BLOG
 header-img: img/post-bg-desk.jpg
 email: hqdaoyidao@163.com
 description: "天行健，君子以自强不息。地势坤，君子以厚德载物。"
@@ -12,7 +12,7 @@ github_repo: "https://github.com/huang-qing/huang-qing.github.io.git" # you code
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-HUANGQING-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/about-huangqing-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
