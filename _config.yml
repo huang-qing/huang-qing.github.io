@@ -100,6 +100,21 @@ friends: [
         title: "简书",
         href: "http://www.jianshu.com/u/a5f4cd1641eb"
     },{
+        title: "知乎",
+        href: "https://www.zhihu.com/"
+    },{
+        title: "花瓣",
+        href: "http://huaban.com/"
+    },{
+        title: "30 days of hiit",
+        href: "https://darebee.com/programs/30-days-of-hiit.html?showall=&start=2"
+    },{
+        title: "163",
+        href: "http://mail.163.com/"
+    },{
+        title: "图灵",
+        href: "http://www.ituring.com.cn/book"
+    },{
         title: "MDN Web Docs",
         href: "https://developer.mozilla.org/zh-CN/"
     },{
@@ -120,6 +135,12 @@ friends: [
     },{
         title: "Apple Developer",
         href: "https://developer.apple.com/"
+    },{
+        title: "雪球",
+        href: "https://xueqiu.com/"
+    },{
+        title: "格隆汇",
+        href: "http://www.guuzhang.com/"
     },{
         title: "TypeScript",
         href: "https://www.tslang.cn/"
@@ -216,6 +237,9 @@ friends: [
     },{
         title: "Node.js",
         href: "https://nodejs.org/zh-cn/"
+    },{
+        title: "jekyll",
+        href: "http://jekyllcn.com/"
     },{
         title: "NPM",
         href: "https://www.npmjs.com/"
