@@ -8,6 +8,8 @@ header-img: img/post-bg-re-vs-ng2.jpg
 catalog: true
 tags:
     - Blog
+    - GitHub Page
+    - jekyll
 ---
 
 # HUANG QING BLOG
