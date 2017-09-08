@@ -100,7 +100,28 @@ friends: [
         title: "简书·DAOYIDAO",
         href: "http://www.jianshu.com/u/a5f4cd1641eb"
     },{
+        title: "MDN Web Docs",
+        href: "https://developer.mozilla.org/zh-CN/"
+    },{
+        title: "Google Developer",
+        href: "https://developers.google.cn/"
+    },{
+        title: "W3C",
+        href: "https://www.w3.org/"
+    },{
+        title: "JSON",
+        href: "http://www.json.org/"
+    },{
+        title: "Cordova",
+        href: "http://cordova.apache.org/"
+    },{
+        title: "Android Developer",
+        href: "https://developer.android.com/index.html"
+    },{
         title: "Apple Developer",
         href: "https://developer.apple.com/"
+    },{
+        title: "TypeScript",
+        href: "https://www.tslang.cn/"
     }
 ]
