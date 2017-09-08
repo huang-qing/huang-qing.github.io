@@ -24,13 +24,6 @@ header-img: "img/home-bg-o.jpg"
 
     <p>工作、学习之余，我特别喜欢运动，跑步、健身和自由搏击都是我特别喜欢的运动。</p>
     
-    <h5>Talks</h5>
-
-    <ul>
-        <li><a href="https://github.com">GitHub</a></li>
-        <li><a href="http://jekyll.com.cn/">jekyll</a></li>
-        <li><a href="https://pages.github.com/">GitHub Pages</a></li>
-    </ul>
 </div>
 
 <!-- English Version -->
@@ -44,14 +37,27 @@ header-img: "img/home-bg-o.jpg"
     
     <p>I am a sports enthusiast, I like fitness, running and tae kwon do, sports is my full of vitality.</p>
 
-    <h5>Talks</h5>
-
-    <ul>
-        <li><a href="https://github.com">GitHub</a></li>
-        <li><a href="http://jekyll.com.cn/">jekyll</a></li>
-        <li><a href="https://pages.github.com/">GitHub Pages</a></li>
-    </ul>
 </div>
+
+<!-- Technology Stack -->
+{% if site.technology_stack %}
+<hr>
+
+<h2>Technology Stack</h2>
+<br/>
+<ul class="list-unstyled">
+    {% for group in site.technology_stack %}
+    <li>
+        <h4> {{group.classify}} </h4>
+        <ul>
+            {% for tech in group.content %}
+            <li><a href="{{tech.href}}">{{tech.title}}</a></li>
+            {% endfor %}
+        </ul>    
+    </li>    
+    {% endfor %}
+</ul>
+{% endif %}
 
 <!-- Handle Language Change -->
 <script type="text/javascript">
