@@ -1,0 +1,137 @@
+[{
+        "classify": "Programming Language",
+        "content": [{
+            "title": "C#",
+            "href": "https://docs.microsoft.com/zh-cn/dotnet/csharp/"
+        }, {
+            "title": "JavaScript(ES5 ES6)",
+            "href": "https://www.javascript.com/"
+        }, {
+            "title": "TypeScript",
+            "href": "https://www.typescriptlang.org/index.html"
+        }, {
+            "title": "HTML5",
+            "href": "https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5"
+        }, {
+            "title": "JSON",
+            "href": "http://www.json.org/"
+        }, {
+            "title": "CSS3",
+            "href": "https://developer.mozilla.org/zh-CN/docs/Web/CSS"
+        }, {
+            "title": "Markdown",
+            "href": "http://www.markdown.cn/"
+        }]
+    },
+    {
+        "classify": "IDE(Integrated Development Environment)",
+        "content": [{
+            "title": "Visual Studio 2017",
+            "href": "https://www.visualstudio.com/zh-hans/vs/"
+        }, {
+            "title": "Visual Studio Code",
+            "href": "https://code.visualstudio.com/"
+        }]
+    },
+    {
+        "classify": "Distributed Version Control System",
+        "content": [{
+            "title": "Visual Source Safe(VSS)",
+            "href": "https://msdn.microsoft.com/zh-cn/library/ms181038"
+        }, {
+            "title": "Team Foundation Server(TFS)",
+            "href": "https://www.visualstudio.com/zh-cn/news/releasenotes/tfs2017-relnotes"
+        }, {
+            "title": "Git",
+            "href": "https://git-scm.com/"
+        }, {
+            "title": "GitHub",
+            "href": "https://github.com/"
+        }]
+    },
+    {
+        "classify": "Debugger",
+        "content": [{
+            "title": "Google Chrome",
+            "href": "https://developers.google.com/web/tools/chrome-devtools/"
+        }, {
+            "title": "Fiddler",
+            "href": "http://www.telerik.com/fiddler"
+        }, {
+            "title": "VMware",
+            "href": "https://www.vmware.com/products/workstation.html"
+        }, {
+            "title": "Genymotion",
+            "href": "https://www.genymotion.com/"
+        }]
+    },
+    {
+        "classify": "Framework",
+        "content": [{
+            "title": "ASP.NET Web Forms",
+            "href": "https://www.asp.net/web-forms"
+        }, {
+            "title": "ASP.NET MVC",
+            "href": "https://www.asp.net/mvc"
+        }, {
+            "title": "Bootstrap",
+            "href": "http://www.bootcss.com/"
+        }, {
+            "title": "Angular",
+            "href": "https://angular.cn/"
+        }, {
+            "title": "Ionic",
+            "href": "http://ionicframework.com/docs/"
+        }, {
+            "title": "Cordova",
+            "href": "http://cordova.apache.org/docs/en/latest/"
+        }]
+    },
+    {
+        "classify": "Library",
+        "content": [{
+            "title": "jQuery",
+            "href": "http://jquery.com/"
+        }, {
+            "title": "Raphaël",
+            "href": "http://dmitrybaranovskiy.github.io/raphael/"
+        }, {
+            "title": "Moment.js",
+            "href": "http://momentjs.cn/"
+        }, {
+            "title": "Echarts",
+            "href": "http://echarts.baidu.com/index.html"
+        }, {
+            "title": "Charts.js",
+            "href": "http://www.chartjs.org/"
+        }, {
+            "title": "RxJS",
+            "href": "http://cn.rx.js.org/"
+        }, {
+            "title": "three.js",
+            "href": "https://threejs.org/"
+        }]
+    },
+    {
+        "classify": "Toolkit",
+        "content": [{
+            "title": "Node.js",
+            "href": "https://nodejs.org/zh-cn/"
+        }, {
+            "title": "NPM",
+            "href": "https://www.npmjs.com/"
+        }, {
+            "title": "淘宝 NPM 镜像",
+            "href": "http://npm.taobao.org/"
+        }, {
+            "title": "Gulp",
+            "href": "http://www.gulpjs.com.cn/"
+        }, {
+            "title": "webpack",
+            "href": "https://webpack.js.org/"
+        }, {
+            "title": "ngrok",
+            "href": "https://ngrok.com/"
+        }]
+    }
+]

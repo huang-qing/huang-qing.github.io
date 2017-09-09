@@ -389,23 +389,30 @@ featured-condition-size: 1              # 相同标签数量大于这个数，�
 
 # 在本地调试博客
 
-有心的同学在 [jekyll官网](http://jekyllcn.com/) 就会发现 `jekyll` 提供的实例代码。
+有心的同学在 [jekyll官网](http://jekyllrb.com/) 就会发现 `jekyll` 提供的实例代码。
 
-`jekyll`需要`Ruby`支持，windows下先下载安装[RubyInstaller for windows](https://rubyinstaller.org/)
+`jekyll`需要`Ruby`和`RubyGems`支持，windows下先下载安装[RubyInstaller for windows](https://rubyinstaller.org/)。详细可参考[这里](http://jekyllrb.com/docs/windows/#installation)
+
+我使用的编辑器是VS Code,,可以在[这里](https://code.visualstudio.com/)下载。
 
 
 ```
-$ gem install jekyll bundler
+# Install Jekyll and Bundler gems through RubyGems
+~ $ gem install jekyll bundler
 
-$ jekyll new my-awesome-site
+# Create a new Jekyll site at ./myblog
+~ $ jekyll new myblog
 
-$ cd my-awesome-site
+# Change into your new directory
+~ $ cd myblog
 
-/my-awesome-site $ bundle install
-/my-awesome-site $ bundle exec jekyll serve
+# Build the site on the preview server
+~/myblog $ bundle exec jekyll serve
 
-# => 打开浏览器 http://localhost:4000
+# Now browse to http://localhost:4000
 ```
+
+关于`bundler` 可查看[About Bundler](http://jekyllrb.com/docs/quickstart/#about-bundler),
 
 
 这段命令创建了一个默认的 `jekll` 网站，然后在本机的 4000 窗口展示。聪明的你应该发现怎么做了吧~

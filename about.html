@@ -40,13 +40,13 @@ header-img: "img/home-bg-o.jpg"
 </div>
 
 <!-- Technology Stack -->
-{% if site.technology_stack %}
+{% if site.data.technology_stack %}
 <hr>
 
 <h2>Technology Stack</h2>
 <br/>
 <ul class="list-unstyled">
-    {% for group in site.technology_stack %}
+    {% for group in site.data.technology_stack %}
     <li>
         <h4> {{group.classify}} </h4>
         <ul>
