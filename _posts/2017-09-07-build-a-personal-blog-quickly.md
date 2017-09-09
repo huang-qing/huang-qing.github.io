@@ -4,8 +4,9 @@ title:      快速搭建个人博客
 subtitle:   手把手教你在半小时内搭建自己的个人博客(如果不踩坑的话🙈🙊🙉)
 date:       2017-09-07
 author:     huangqing
-header-img: img/post-bg-re-vs-ng2.jpg
+header-img: img/post-bg-github-cup.jpg
 catalog: true
+categories: [GitHub]
 tags:
     - Blog
     - GitHub Pages
@@ -17,48 +18,44 @@ tags:
 
 ### 从注册一个Github账号开始
 
-我采用的搭建博客的方式是使用 [GitHub Pages](https://pages.github.com/) + [jekyll](http://jekyll.com.cn/) 的方式。
+采用的搭建博客的方式是使用 [GitHub Pages](https://pages.github.com/) + [jekyll](http://jekyll.com.cn/) 的方式。
 
 要使用 GitHub Pages，首先你要注册一个 [GitHub](https://github.com/) 账号，GitHub 是全球最大的同性交友网站(吐槽下程序员~)，你值得拥有。
 
-![](https://ww4.sinaimg.cn/large/006tKfTcgy1fch0a9kz7aj31kw0z7npd.jpg)
+![](/images/github/006tKfTcgy1fch0a9kz7aj31kw0z7npd.jpg)
 
 ### 拉取我的博客模板
 
 注册完成后搜索 `huang-qing.github.io` 进入[我的仓库](https://github.com/huang-qing/huang-qing.github.io)
 
 
-![](https://ww3.sinaimg.cn/large/006tNbRwgy1fcgqjugzkpj30yy0p1mzc.jpg)
+![](/images/github/2017-09-09_110553.png)
 
 点击右上角的 **Fork** 将我的仓库拉倒你的账号下
 
 稍等一下，点击刷新，你会看到**Fork**了成功的页面
-
-![](https://ww3.sinaimg.cn/large/006tKfTcgy1fch1i297pjj31kw0z7thk.jpg)
 
 
 ### 修改仓库名
 
 点击**settings**进入设置
 
-![](https://ww3.sinaimg.cn/large/006tNbRwgy1fcgqms2auij30yy0p1tau.jpg)
-
 <p id = "Rename"></p>
 修改仓库名为 `你的Github账号名.github.io`，然后 Rename
 
-![](https://ww4.sinaimg.cn/large/006tNbRwgy1fcgqfwtk1rj30yy0p1wg6.jpg)
+![](/images/github/2017-09-09_111456.png)
 
 这时你在在浏览器中输入 `你的Github账号名.github.io` 例如:`huang-qing.github.io`
 
 你将会看到如下界面
 
-![](https://ww2.sinaimg.cn/large/006tNbRwgy1fcgquoqasqj30we0n8q4n.jpg)
+![](/images/github/2017-09-09_112022.png)
 
 说明已经成功一半了😀。。。当然，还需要修改博客的配置才能变成你的博客。
 
 若是出现
 
-![](https://ww3.sinaimg.cn/large/006tNbRwgy1fcgqz6dyxmj30we0n83yy.jpg)
+![](/images/github/006tNbRwgy1fcgqz6dyxmj30we0n83yy.jpg)
 
 则需要 [检查一下你的仓库名是否正确](#Rename)
 
@@ -101,15 +98,15 @@ tags:
 
 来到你的仓库，找到`_config.yml`文件,这是网站的全局配置文件。
 
-![](https://ww1.sinaimg.cn/large/006tNbRwgy1fcgrcxz8nqj30v90ulwh7.jpg)
+![](/images/github/2017-09-09_113220.png)
 
 点击修改
 
-![](https://ww3.sinaimg.cn/large/006tNbRwgy1fcgrjzc232j30uz0nijt6.jpg)
+![](/images/github/2017-09-09_113513.png)
 
 然后编辑`_config.yml`的内容
 
-![](https://ww2.sinaimg.cn/large/006tNbRwgy1fcgrnp4ihqj30uy0okwg9.jpg)
+
 
 接下来我们来详细说说以下配置文件的内容：
 
@@ -122,7 +119,7 @@ SEOTitle: 你的博客 | You Blog    	 #显示在浏览器上搜索的时候显�
 header-img: img/post-bg-rwd.jpg  	#显示在首页的背景图片
 email: You@gmail.com	
 description: "You Blog"  			 #网站介绍
-keyword: "BY, BY Blog, 柏荧的博客, huang-qing, 邱柏荧, iOS, Apple, iPhone" #关键词
+keyword: "HUANG QING, HUANG QING Blog, 黄庆的博客, Front-End" #关键词
 url: "https://huang-qing.github.io"          # 这个就是填写你的博客地址
 baseurl: ""      # 这个我们不用填写
 
@@ -140,7 +137,7 @@ sidebar-avatar: img/avatar-huangqing.JPG      # 你的个人头像 这里你可�
 #### 社交账号
 展示你的其他社交平台
 
-![](https://ww3.sinaimg.cn/large/006tNbRwgy1fcgsm4plpdj307i03nt8i.jpg)
+![](/images/github/006tNbRwgy1fcgsm4plpdj307i03nt8i.jpg)
 
 在下面你的社交账号的用户名就可以了，若没有可不用填
 
@@ -154,41 +151,26 @@ facebook_username:  username
 jianshu_username:	jianshu_id
 ```
 
-新加入了**简书**，`jianshu_id` 在你打开你的简书主页后的地址如：`http://www.jianshu.com/u/e71990ada2fd`中，后面这一串数字：`e71990ada2fd `
+新加入了**简书**，`jianshu_id` 在你打开你的简书主页后的地址如：`http://www.jianshu.com/u/a5f4cd1641eb`中，后面这一串数字：`a5f4cd1641eb `
 
 #### 评论系统
 
-~~集成了多说社会化评论，到多说注册账号，然后将`duoshuo_username`换成你的账号即可。~~
->多说即将关闭：说将于2017年6月1日正式关停服务，[详见官网](http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241)
-
-我们博客的评论系统切换到 [Disqus](https://disqus.com/),在官网注册帐号之后，在下面的填写你多说的用户名的就可以使用。
-
-![](https://ww2.sinaimg.cn/large/006tNbRwgy1feudbz8o8sj30mu0g1abt.jpg)
-
-```
-# Disqus settings（https://disqus.com/）
-disqus_username: huang-qing
-```
+待续。。。😅
 
 #### 网站统计
 
-集成了 [Baidu Analytics](http://tongji.baidu.com/web/welcome/login) 和 [Google Analytics](http://www.google.cn/analytics/)，到各个网站注册拿到track_id替换下面的就可以了
+集成了 [Baidu Analytics](http://tongji.baidu.com/web/welcome/login) 和 [Google Analytics](http://www.google.cn/analytics/)，到各个网站注册拿到`track_id`替换下面的就可以了
 
-这是我的 Google Analytics
-
-![](https://ww1.sinaimg.cn/large/006tNc79gy1fcgtqc5wf0j310i0nbt9j.jpg)
-
-**不要使用我的track_id**😂。。。
 
 若不想启用统计，直接删除或注释掉就可以了
 
 ```
 # Analytics settings
 # Baidu Analytics
-ba_track_id: 83e259f69b37d02a4633a2b7d960139c
+ba_track_id: xxxxxxxxxxxxxxxxxxxxx
 
 # Google Analytics
-ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
+ga_track_id: 'UA-xxxxxx-xx'            # Format: UA-xxxxxx-xx
 ga_domain: auto
 ```
 
@@ -197,14 +179,14 @@ ga_domain: auto
 ```
 friends: [
     {
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
+        title: "简书",
+        href: "http://www.jianshu.com/u/a5f4cd1641eb"
     },{
-        title: "Apple",
-        href: "https://apple.com"
+        title: "知乎",
+        href: "https://www.zhihu.com/"
     },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        title: "花瓣",
+        href: "http://huaban.com/"
     }
 ]
 ```
@@ -212,13 +194,9 @@ friends: [
 #### 保存
 讲网页拉倒底部，点击 `Commit changes` 提交保存
 
-![](https://ww2.sinaimg.cn/large/006tKfTcgy1fch1mpktilj31kw0z7n34.jpg)
+![](/images/github/006tKfTcgy1fch1mpktilj31kw0z7n34.jpg)
 
-再次进入你的主页，
-
-![](https://ww2.sinaimg.cn/large/006tNc79gy1fcgtqheu38j30uy0kc3zs.jpg)
-
-恭喜你，你的个人博客搭建完成了😀。
+再次进入你的主页（估计需要几分钟之后），恭喜你，你的个人博客搭建完成了😀。
 
 # 写文章
 
@@ -229,27 +207,27 @@ friends: [
 ## 创建
 文章统一放在网站根目录下的 `_posts` 的文件夹中。
 
-![](https://ww3.sinaimg.cn/large/006tNc79gy1fchoc1tz03j30vi0k978h.jpg)
+![](/images/github/2017-09-09_131755.png)
 
 创建一个文件
 
-![](https://ww2.sinaimg.cn/large/006tNc79gy1fchoduzebyj30vn0eg0v7.jpg)
+![](/images/github/2017-09-09_132101.png)
 
 在下面写文章，和标题，还能实时预览，最后提交保存就能看到自己的新文章了。
 
-![](https://ww2.sinaimg.cn/large/006y8lVagy1fcgweml8hjj30vd0m775r.jpg)
+![](/images/github/2017-09-09_132201.png)
 
 
 ## 格式
 每一篇文章文件命名采用的是`2017-02-04-Hello-2017.md`时间+标题的形式，空格用`-`替换连接。
 
-文件的格式是 `.md` 的 [**MarkDown**](http://sspai.com/25137/) 文件。
+文件的格式是 `.md` 的 **MarkDown**文件。
 
 我们的博客文章格式采用是 **MarkDown**+ **YAML** 的方式。
 
 [**YAML**](http://www.ruanyifeng.com/blog/2016/07/yaml.html?f=tt) 就是我们配置 `_config`文件用的语言。
 
-[**MarkDown**](http://sspai.com/25137/) 是一种轻量级的「标记语言」，很简单。[花半个小时看一下](http://sspai.com/25137)就能熟练使用了
+[**MarkDown**](/markdown/2017/01/02/markdown-syntax/) 是一种轻量级的「标记语言」，很简单。
 
 大概就是这么一个结构。
 
@@ -274,8 +252,6 @@ tags:								#标签
 
 按格式创建文章后，提交保存。进入你的博客主页，新的文章将会出现在你的主页上.
 
-![](https://ww4.sinaimg.cn/large/006tKfTcgy1fch26elve4j31kw13qhdt.jpg)
-
 
 #### 首页标签
 
@@ -285,7 +261,7 @@ tags:								#标签
 
 
 
-![](https://ws2.sinaimg.cn/large/006tKfTcgy1fh7uy90ayzj30gd09udh0.jpg)
+![](/images/github/006tKfTcgy1fh7uy90ayzj30gd09udh0.jpg)
 
 
 建站的初期，博客比较少，若你想直接在首页生成比较多的标签。你可以在 `_congfig.yml`中找到这段：
@@ -308,14 +284,16 @@ featured-condition-size: 1              # 相同标签数量大于这个数，�
 
 # 自定义域名
 
-搭建好博客之后 你可能不想直接使用 [huang-qing.github.io](http://huang-qing.github.io) 这么长的博客域名吧, 想换成想 [huang-qing.top](http://huang-qing.top) 这样简短的域名。那我们开始吧！
+搭建好博客之后 你可能不想直接使用 [huang-qing.github.io](http://huang-qing.github.io) 这么长的博客域名吧, 想换成想 [huang-qing.top](http://huang-qing.github.io) 这样简短的域名。
+
+那我们开始吧！
 
 #### 购买域名
-首先，你必须购买一个自己的域名。
+首先，你必须购买一个自己的域名。（我没有购买域名，直接`Copy` BY 的博客）
 
 我是在[阿里云](https://wanwang.aliyun.com/domain/?spm=5176.8006371.1007.dnetcndomain.q1ys4x)购买的域名
 
-![](https://ww4.sinaimg.cn/large/006tKfTcgy1fci89zv06yj31kw11p1kx.jpg)
+![](/images/github/006tKfTcgy1fci89zv06yj31kw11p1kx.jpg)
 
 用**阿里云** app也可以注册域名，域名的价格根据后缀的不同和域名的长度而分，比如我这个 `huang-qing.top` 的域名第一年才只要4元~
 
@@ -329,11 +307,11 @@ featured-condition-size: 1              # 相同标签数量大于这个数，�
 
 管理控制台 → 域名与网站（万网） → 域名
 
-![](https://ww1.sinaimg.cn/large/006tKfTcgy1fci8phk5z9j30nk0q0goy.jpg)
+![](/images/github/006tKfTcgy1fci8phk5z9j30nk0q0goy.jpg)
 
 选择你注册好的域名，点击解析
 
-![](https://ww4.sinaimg.cn/large/006tKfTcgy1fci8sg27bfj31kw0s0qdt.jpg)
+![](/images/github/006tKfTcgy1fci8sg27bfj31kw0s0qdt.jpg)
 
 添加解析
 
@@ -345,7 +323,7 @@ featured-condition-size: 1              # 相同标签数量大于这个数，�
 
 记录值就是我们博客的IP地址，是 GitHub Pagas 在美国的服务器的地址 `151.101.100.133`
 
-![](https://ww3.sinaimg.cn/large/006tKfTcgy1fci8x9412oj31kw0o4n5o.jpg)
+![](/images/github/006tKfTcgy1fci8x9412oj31kw0o4n5o.jpg)
 
 
 可以通过 [这个网站](http://ip.chinaz.com/)  或者直接在终端输入`ping 你的地址`，查看博客的IP
@@ -354,7 +332,7 @@ featured-condition-size: 1              # 相同标签数量大于这个数，�
 
 细心地你会发现所有人的博客都解析到 `151.101.100.133` 这个IP。
 
-然后 GitHub Pages 再通过 CNAME记录 跳转到你的主页上。
+然后 GitHub Pages 再通过 `CNAME`记录 跳转到你的主页上。
 
 
 #### 修改CNAME
@@ -363,11 +341,11 @@ featured-condition-size: 1              # 相同标签数量大于这个数，�
 
 选择 **CNAME** 文件
 
-![](https://ww2.sinaimg.cn/large/006tKfTcgy1fci9q9ne6qj31kw0uuajm.jpg)
+![](/images/github/006tKfTcgy1fci9q9ne6qj31kw0uuajm.jpg)
 
 使用的注册的域名进行替换,然后提交保存
 
-![](https://ww2.sinaimg.cn/large/006tKfTcgy1fci9rzk0naj316s0n841s.jpg)
+![](/images/github/006tKfTcgy1fci9rzk0naj316s0n841s.jpg)
 
 
 这时，输入你自己的域名，就可以解析到你的主页了。
@@ -376,7 +354,7 @@ featured-condition-size: 1              # 相同标签数量大于这个数，�
 
 # 进阶
 
-若你对博客模板进行修改，你就要看看 Jekyll 的[开发文档](http://jekyll.com.cn),是中文文档哦，对英语不好的朋友简直是福利啊（比如说我😀）。
+若你对博客模板进行修改，你就要看看 Jekyll 的[开发文档](http://jekyllcn.com/),是中文文档哦，对英语不好的朋友简直是福利啊（比如说我😀）。
 
 还要学习 **Git** 和 **GitHub** 的工作机制了及使用。
 
@@ -390,116 +368,11 @@ featured-condition-size: 1              # 相同标签数量大于这个数，�
 
 [GithHub Desktop](https://desktop.github.com/) 是 **GithHub** 推出的一款管理GitHub仓库的桌面软件，换句话说就是将你在**Github**上的文件同步到本地电脑上，并将修改后的文件同步到**Github**远程仓库。
 
-#### 下载
-
-点击图片进入下载页面，选择对应的平台进行下载
-
-[![](https://ww2.sinaimg.cn/large/006tNbRwgy1fcs4th7y21j30zb0nun2l.jpg)](https://desktop.github.com/)
-
-下面以**Mac**平台为例：
-
-#### 安装
-
-将下载好的文件解压，将这只小猫拖到应用程序文件夹中
-
-![](https://ww3.sinaimg.cn/large/006tNbRwgy1fcs4zqqqcnj30kn0evjvh.jpg)
-
-就可以在**Launchpad**找到这只小猫咪~
-
-![](https://ww3.sinaimg.cn/large/006tNbRwgy1fcs5100bv8j30gs0f4jya.jpg)
-
-#### 登录
-
-点开应用,会弹出**登录**框，
-
-![](https://ww1.sinaimg.cn/large/006tNbRwgy1fcs5j8w5r3j30cz0edwgz.jpg)
-
-输入你的**GitHub**账号和密码进行登录
-
-![](https://ww2.sinaimg.cn/large/006tNbRwgy1fcs5jp1buoj30ic0f9abf.jpg)
-
-登录后关闭窗口
-
-![](https://ww2.sinaimg.cn/large/006tNbRwgy1fcs5kam654j30ic0ca0u6.jpg)
-
-然后返回引导窗，一直按 **Continue** 继续
-
-![](https://ww2.sinaimg.cn/large/006tNbRwgy1fcs5m19o9oj30g40hl0wb.jpg)
-
-**Continue**
-
-![](https://ww4.sinaimg.cn/large/006tNbRwgy1fcs5mcteavj30ic0d1gn4.jpg)
-
-还是**Continue**~
-![](https://ww3.sinaimg.cn/large/006tNbRwgy1fcs5msn4jrj30hp0d5jt1.jpg)
-
-进入主界面，先 **右键Remve** 删除这个用户指导，贼烦~
-
-![](https://ww3.sinaimg.cn/large/006tNbRwgy1fcs5p6ur5qj30rp0i640z.jpg)
-
-#### 克隆仓库
-
-选择你的仓库克隆到本地
-
-![](https://ww2.sinaimg.cn/large/006tNbRwgy1fcs5px118bj30rq0iatai.jpg)
-
-![](https://ww1.sinaimg.cn/large/006tNbRwgy1fcs5s4bs1aj30cq05o0t6.jpg)
-
-
-#### 管理仓库
-
-现在文件夹中打开
-
-![](https://ww3.sinaimg.cn/large/006tNbRwgy1fcs5rqdaxpj30rn0i7n2x.jpg)
-
-打开后你会的发现文件结构和你在Github上的一模一样~
-
-![](https://ww1.sinaimg.cn/large/006tNbRwgy1fcs5sksz92j30lz0irdjs.jpg)
-
-你最先关心的可能是你的头像~在**img**文件夹中把替换我的头像就好了。
-
-![](https://ww4.sinaimg.cn/large/006tNbRwgy1fcs5ss0a54j30lz0irwiv.jpg)
-
-不仅是图片，所有在Github上的的操作都可以进行。
-
-#### 保存修改
-
-当你对仓库文件夹的文件下进行修改、添加或删除时，都可以在 **GitHub Desktop** 中看到
-
-例如我在 `img` 中添加了一张图片 `avatar-demo.png` 添加了一张图片
-
-就可以在看到**GitHub Desktop**显示了我的修改
-
-保存修改只要按 **Commit to master**，然后可以写上你的修改说明
-
-![](https://ww3.sinaimg.cn/large/006tNbRwgy1fcs8t8fp7nj30uw0lhwgz.jpg)
-
-#### 同步
-
-将修改同步到 **GitHub** 远程仓库上只需要一步：点击右上角的**同步按钮**
-
-![](https://ww3.sinaimg.cn/large/006tNbRwgy1fcs8w7vxdoj30uw0lh76d.jpg)
-
-#### 完成
-
-打开你的GitHub上的仓库，你就可以看到已经和本地同步了
-
-可以看到你提交的详情： `add img` 
-
-![](https://ww1.sinaimg.cn/large/006tNbRwgy1fcs8y4ysmhj31050rotea.jpg)
-
-这样，你已经能轻松管理自己的博客了。
-
-想上传头像，背景，或者是删掉你不要的图片（我的头像😏）已经是 so eazy了吧~
-
-#### 注意
-你在 **GitHub** 网站上进行 **Commit** 操作后，需要在**GitHub Desktop**上按一下 **同步按键** 才能同步网站上的修改到你的本地。
 
 # 常见问题
 
-最近有很多人给我提问题，我这边总结一下
-
 #### 配置文件修改后没有效果
+
 刷新几遍浏览器就好了~
 
 不行的话，先清除浏览器缓存再试试。
@@ -518,30 +391,20 @@ featured-condition-size: 1              # 相同标签数量大于这个数，�
 直接在评论中提出来或私信我，我会一一替大家解决的😀
 
 
-# 其他
-
-最近有人往我的远程仓库不停的 **push**，一天连收几十封邮件！例如像这样的
-
-![](https://ww4.sinaimg.cn/large/006tNbRwgy1feueecznhjj30k50lpq6u.jpg)
-
-这打扰了我的工作！
-
-所以，**请不要往我的仓库上推送分支**！
-
-我发现一个问题是，很多人每次修改博客的内容都commit一次到远程，然后再查看修改结果，这样效率非常低！
-
-### 来，上车！
-
-## 在本地调试博客
+# 在本地调试博客
 
 有心的同学在 [jekyll官网](http://jekyllcn.com/) 就会发现 `jekyll` 的 提供的实例代码。
 
 ```
-~ $ gem install jekyll bundler
-~ $ jekyll new my-awesome-site
-~ $ cd my-awesome-site
-~/my-awesome-site $ bundle install
-~/my-awesome-site $ bundle exec jekyll serve
+$ gem install jekyll bundler
+
+$ jekyll new my-awesome-site
+
+$ cd my-awesome-site
+
+/my-awesome-site $ bundle install
+/my-awesome-site $ bundle exec jekyll serve
+
 # => 打开浏览器 http://localhost:4000
 ```
 
@@ -551,22 +414,28 @@ featured-condition-size: 1              # 相同标签数量大于这个数，�
 安装 `jekyll`和 `jekyll bundler`
 
 ```
-$ gem install jekyll
 $ gem install jekyll bundler
 ```
 
 进入你的 **Blog 所在目录**，然后创建本地服务器
 
 ```
-$ jekyll s
+$ F:\huang-qing.github.io> bundle exec jekyll serve
 
 ```
 
 然后会显示 
 
 ```
- Auto-regeneration: enabled for '/Users/baiying/Blog'
-Configuration file: /Users/baiying/Blog/_config.yml
+Configuration file: F:/huang-qing.github.io/_config.yml
+            Source: F:/huang-qing.github.io
+       Destination: F:/huang-qing.github.io/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating...
+                    done in 2.631 seconds.
+  Please add the following to your Gemfile to avoid polling for changes:
+    gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+ Auto-regeneration: enabled for 'F:/huang-qing.github.io'
     Server address: http://127.0.0.1:4000/
   Server running... press ctrl-c to stop.
 ```
@@ -577,87 +446,4 @@ Configuration file: /Users/baiying/Blog/_config.yml
 
 # Star
 
-若本教程顺利帮你搭建了自己的个人博客，请不要 **害羞**，给我的 [github仓库](https://github.com/huang-qing/huang-qing.github.io) 点个 **star** 吧！
-
-因为最近发现 Fork 将近破百，加上直接 Clone 仓库的，保守估计已经帮助上百人成功的搭建了自己的博客，可是 Star 却仅仅只有 **12**！可能还是做的不够好吧！
-
-### **别无他求，点个 [Star](https://github.com/huang-qing/huang-qing.github.io) 吧**！
-
-![](https://ww2.sinaimg.cn/large/006tNbRwgy1feudm8xrmgj30vu0idn08.jpg)
-
-**心满意足！**
-
-
-# 补充
-
-#### 修改主页的座右铭
-
-最近有不少小伙伴私信我：**如何修改主页的座右铭？**
-
-就是这个：
-
-![](http://upload-images.jianshu.io/upload_images/2178672-31dc0068f256aca3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-很简单，找到博客目录下的 **index.html** 文件，修改这句话就可以了。
-
-![](http://upload-images.jianshu.io/upload_images/2178672-9e4785654523bf07.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-#### 如何在博客文章中上插入图片
-
-博客的文章用的是 MarkDown 格式，如果没用过 MarkDown 真的 强烈推荐 [花半个小时学习一下](http://sspai.com/25137)。
-
-MarkDown 中添加图片的形式是 :`![](图片的URL)`
-
-例如：
-
-`![MarkDown示例图片](http://upload-images.jianshu.io/upload_images/2178672-eb2effd6b942a500.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)`就会显示下面这张图片
-
-![MarkDown示例图片](http://upload-images.jianshu.io/upload_images/2178672-98965f66db8f5856.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-`https://ws3.sinaimg.cn/large/006tNc79gy1fj9xhjzobbj30yg0my75z.jpg`就是这张图片的URL，我们可以在浏览器输入这个URL找到或下载这张图片。
-
-所以，要在 MacDown 中插入图片，这张图片就需要上传到图床（网上），然后在引
-用这张图片的URL。
-
-##### 将图片上传到图床
-
-Mac 上的图床神器：iPic  
-
-直接在App Store上下载，谁用谁知道！
-
-使用方法很简单，直接拖动图片到 P 图标上，或者选中图片按快捷键 `⌘+U`，就能请示上传。
-
-上传成功就能直接粘贴图片的URL。
-
-![iPic](http://upload-images.jianshu.io/upload_images/2178672-7399aeaced6f1e29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-用 iPic 上传图片后，获取URL插入文章中就可以了。
-
-![iPic上传图片](http://upload-images.jianshu.io/upload_images/2178672-4be76fb02708de5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-
-#### 推荐几个好用软件
-
-##### MarkDown编辑器
-
-[MacDown](https://macdown.uranusjr.com/)：可能是Mac上最好的MacDown编辑器了  
-
-![](http://upload-images.jianshu.io/upload_images/2178672-2226239a63278302.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-##### 图片压缩工具
-
-[ImageOptim](https://imageoptim.com/)
-
-对于我们的博客来说，图片越大，加载速度越慢。
-
-不信你用手机打开你的博客试试~
-
-所以有必要对我们上传到博客网站中的图片：指的是你的头像，首页背景图片，文章背景图片等。对于博客文章中插入的图片，其实也可以压缩了再上传。
-
-对博客中的所有图片进行压缩：
-
-看看压缩结果，最高的一张压缩了78.7%，这简直是太可怕了！
-
-![ImageOptim压缩图片](http://upload-images.jianshu.io/upload_images/2178672-0f8e643fa1da8674.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-好了，现在个人博客的加载速度估计要起飞了~
+若本教程顺利帮你搭建了自己的个人博客，请不要 **害羞**，给我的 [github仓库](https://github.com/huang-qing/huang-qing.github.io) 点个 **star** 吧😀！

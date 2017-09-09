@@ -1,11 +1,12 @@
 ---
 layout:     post
-title:      个人博客说明
+title:      个人博客配置说明
 subtitle:   
 date:       2017-09-07
 author:     huangqing
-header-img: img/post-bg-re-vs-ng2.jpg
+header-img: img/post-bg-github-cup.jpg
 catalog: true
+categories: [GitHub]
 tags:
     - Blog
     - GitHub Pages
