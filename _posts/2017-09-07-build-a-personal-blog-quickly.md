@@ -393,7 +393,7 @@ featured-condition-size: 1              # 相同标签数量大于这个数，�
 
 `jekyll`需要`Ruby`和`RubyGems`支持，windows下先下载安装[RubyInstaller for windows](https://rubyinstaller.org/)。详细可参考[这里](http://jekyllrb.com/docs/windows/#installation)
 
-我使用的编辑器是VS Code,,可以在[这里](https://code.visualstudio.com/)下载。
+我使用的编辑器是VS Code,可以在[这里](https://code.visualstudio.com/)下载。
 
 
 ```
