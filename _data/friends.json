@@ -190,4 +190,11 @@
 }, {
     "title": "Node.js",
     "href": "https://nodejs.org/zh-cn/"
+}, {
+    "title": "Eslint",
+    "href": "http://eslint.cn/docs/user-guide/configuring"
+}, {
+    "title": "cheat-sheet",
+    "href": "https://docs.emmet.io/cheat-sheet/"
 }]
+
