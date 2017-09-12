@@ -2,7 +2,7 @@
 layout:     post
 title:      Git
 subtitle:   Git 简明教程
-date:       2017-04-14
+date:       2017-04-11
 author:     huangqing
 header-img: img/post-bg-git.png
 catalog: true
