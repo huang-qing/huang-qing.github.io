@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      移动应用开发框架选型
+title:      移动应用开发框架选型 2016
 subtitle:   
 date:       2016-06-07
 author:     huangqing

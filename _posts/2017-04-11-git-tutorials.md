@@ -4,12 +4,11 @@ title:      Git
 subtitle:   Git 简明教程
 date:       2017-04-11
 author:     huangqing
-header-img: img/post-bg-git.png
+header-img: img/post-bg-git.jpg
 catalog: true
 categories: [Git]
 tags:
     - Git
-    - TortoiseGit
     - vscode    
 ---
 
