@@ -8,8 +8,8 @@ header-img: img/post-bg-technology-stack.jpg
 catalog: true
 categories: [technology-stack]
 tags:
-    - 部署
-    - 前端
+    - web
+    - deploy
 ---
 
 

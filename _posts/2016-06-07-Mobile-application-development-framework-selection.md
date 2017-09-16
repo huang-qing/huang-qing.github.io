@@ -103,7 +103,7 @@ Native APP 指的是原生程序，一般依托于操作系统，有很强的交
 
 ### 1.4	开发模式对比
 
-![开发模式对比](/images/mobileApp/Dev.jpg)
+![开发模式对比](/images/app/Dev.jpg)
 
 ### 1.5	开发模式选择
 
@@ -155,19 +155,19 @@ Native APP 指的是原生程序，一般依托于操作系统，有很强的交
 
 jQuery Mobile UI更像是web UI。通过实践， jquery mobile效率不高，过于臃肿，没有模块化的概念，特别是在用户体验性、性能、动画方面有巨大的缺陷。不推荐使用。
 
-![jquery mobile](/images/mobileApp/jquery_mobile.png)
+![jquery mobile](/images/app/jquery_mobile.png)
  
 ### 3.2	sencha touch
 
 sencha touch，组件丰富，有ext知识背景的接受起来比较容易。但企业应用是收费的。暂不考虑使用，不进行详细说明。
 
-![sencha touch](/images/mobileApp/sencha_touch.png)
+![sencha touch](/images/app/sencha_touch.png)
  
 ### 3.3	ionic
 
 ionic 基于cordova,采用angularjs实现前后台交互逻辑,并且提供移动定制界面页签。性能高效，使用虚拟DOM渲染、硬件加速、触摸手势优化等技术。提供移动优化HTML，设计美观的CSS和JS组件库组件。命令打包app应用，实现一次开发，处处部署。
 
-![ionic](/images/mobileApp/ionic.jpg)
+![ionic](/images/app/ionic.jpg)
 
  
 |是否免费|	是	|遵循MIT协议
