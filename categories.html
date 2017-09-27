@@ -1,9 +1,21 @@
 ---
-title: Categories
 layout: default
+title: Categories
 description:  "文章分类"
-header-img: "img/tag-bg.jpg"
+header-img: "img/categories-bg.jpg"
 ---
+
+<style  type="text/css">
+#accordion .panel-body li{
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+#accordion .panel-title>a{
+	text-transform:uppercase;
+}
+</style>
 
 <!-- Page Header -->
 <header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
@@ -21,15 +33,16 @@ header-img: "img/tag-bg.jpg"
 
 <!-- Main Content -->
 <div class="container">
+
 	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <!-- 标签云 -->
+		<!-- list Content -->
+		<div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1">
+					<!-- 标签云 -->
 			<div id='tag_cloud' class="tags">
 				{% for category in site.categories %}
 				<a href="#{{ category[0] }}" title="{{ category[0] }}" rel="{{ category[1].size }}">{{ category[0] }}</a>
 				{% endfor %}
 			</div>
-
             <!-- 标签列表 -->
 			{% for category in site.categories %}
 			<div class="one-tag-list">
@@ -39,14 +52,11 @@ header-img: "img/tag-bg.jpg"
 				</span>
 				<div>
 					{% for post in category[1] %}
-					<!-- <li class="listing-item">
-					<time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-					<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-					</li> -->
 					<div class="post-preview">
 						<a href="{{ post.url | prepend: site.baseurl }}">
 							<h2 class="post-title">
-								{{ post.title }}
+								{{ post.title }} 
+								<time class="small" datetime="{{ post.date | date:'%Y-%m-%d' }}">{{ post.date | date:"%Y-%m-%d" }}</time>
 							</h2>
 							{% if post.subtitle %}
 							<!-- <h3 class="post-subtitle">
@@ -63,5 +73,42 @@ header-img: "img/tag-bg.jpg"
 			{% endfor %}
 
 		</div>
+		<!-- side Content -->
+        <div class="col-sm-3 col-xs-5 panel-group" >
+			
+			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
+				{% for category in site.categories %}
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="heading-{{category[0]}}">
+						<h4 class="panel-title">
+							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{category[0]}}" aria-expanded="false" aria-controls="collapse-{{category[0]}}">
+								{{ category[0] | capitalize }} 
+								<span class="badge pull-right">{{ category[1].size }}</span>
+							 </a>
+						</h4>
+					</div>
+					<div id="collapse-{{category[0]}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{{category[0]}}">
+						<div class="panel-body">
+							<ul class="list-unstyled">
+									{% assign pages_list = category[1] %}
+									{% for node in pages_list %}
+									{% if node.title != null %}
+										{% if group == null or group == node.group %}
+										<li>
+											<a href="{{ site.BASE_PATH }}{{node.url}}">{{node.title}}</a> 
+											<!-- <span class="text-muted small"> &raquo;  {{ node.date | date: "%F" }}</span> -->
+										</li>
+										{% endif %}
+									{% endif %}
+									{% endfor %}
+									{% assign pages_list = nil %}
+								</ul>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+
+        </div>
 	</div>
 </div>
