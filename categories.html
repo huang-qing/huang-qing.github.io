@@ -1,0 +1,67 @@
+---
+title: Categories
+layout: default
+description:  "文章分类"
+header-img: "img/tag-bg.jpg"
+---
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading" id="tag-heading">
+                    <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+                    <span class="subheading">{{ page.description }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <!-- 标签云 -->
+			<div id='tag_cloud' class="tags">
+				{% for category in site.categories %}
+				<a href="#{{ category[0] }}" title="{{ category[0] }}" rel="{{ category[1].size }}">{{ category[0] }}</a>
+				{% endfor %}
+			</div>
+
+            <!-- 标签列表 -->
+			{% for category in site.categories %}
+			<div class="one-tag-list">
+			  	<span class="fa fa-folder listing-seperator text-success" id="{{ category[0] }}">
+					<span class="tag-text">{{ category[0] }}</span>
+					<span class="badge badge-success">{{ category[1].size }}</span>
+				</span>
+				<div>
+					{% for post in category[1] %}
+					<!-- <li class="listing-item">
+					<time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+					<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+					</li> -->
+					<div class="post-preview">
+						<a href="{{ post.url | prepend: site.baseurl }}">
+							<h2 class="post-title">
+								{{ post.title }}
+							</h2>
+							{% if post.subtitle %}
+							<!-- <h3 class="post-subtitle">
+								{{ post.subtitle }}
+							</h3> -->
+							{% endif %}
+						</a>
+						<!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+					</div>
+					<hr>
+					{% endfor %}
+				</div>
+			</div>
+			{% endfor %}
+
+		</div>
+	</div>
+</div>
