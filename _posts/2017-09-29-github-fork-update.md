@@ -37,13 +37,12 @@ tags:
 
 4. 点击`switching the base`.这时`github`将反过来比较`yourfork/original`，这时你将看到`original`相对你`fork`时的所有`commit`;
 
-![](/images/github/Comparing changes.png)
+    ![Comparing changes](/images/github/Comparing-changes.png)
 
 5. 点击`create a pull request for this comparison`，这时将会反过来向你的repo提交一个`pull request`;
 
 6. 这时你作为你自己fork的repo的owner，你就可以点击`confirm the merge`，合并同步完成！👻
-
-![](/images/github/confirm-merge.png)
+    ![](/images/github/confirm-merge.png)
  
 ## 使用git命令
 
@@ -56,3 +55,6 @@ git merge upstream/master master
 
 git push origin master
 ```
+
+
+
