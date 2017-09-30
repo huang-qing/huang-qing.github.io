@@ -29,20 +29,21 @@ tags:
 
 另外还有一种更加简便聪明的方法：只需在github网站上点几个鼠标，不用本地开发环境轻松搞定：
 
-1. 打开你的`github fork repo`;
+1.打开你的`github fork repo`;
 
-2. 点击`Pull request`;
+2.点击`Pull request`;
 
-3. 点击`new pull request`.默认情况下，`github`会比较`original/your fork`，这时应该不会有任何输出，因为你并没有做过任何变更；
+3.点击`new pull request`.默认情况下，`github`会比较`original/your fork`，这时应该不会有任何输出，因为你并没有做过任何变更；
 
-4. 点击`switching the base`.这时`github`将反过来比较`yourfork/original`，这时你将看到`original`相对你`fork`时的所有`commit`;
+4.点击`switching the base`.这时`github`将反过来比较`yourfork/original`，这时你将看到`original`相对你`fork`时的所有`commit`;
 
-    ![Comparing changes](/images/github/Comparing-changes.png)
+![Comparing changes](/images/github/Comparing-changes.png)
 
-5. 点击`create a pull request for this comparison`，这时将会反过来向你的repo提交一个`pull request`;
+5.点击`create a pull request for this comparison`，这时将会反过来向你的repo提交一个`pull request`;
 
-6. 这时你作为你自己fork的repo的owner，你就可以点击`confirm the merge`，合并同步完成！👻
-    ![](/images/github/confirm-merge.png)
+6.这时你作为你自己fork的repo的owner，你就可以点击`confirm the merge`，合并同步完成！👻
+
+![](/images/github/confirm-merge.png)
  
 ## 使用git命令
 
