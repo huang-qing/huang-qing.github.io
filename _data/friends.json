@@ -205,5 +205,8 @@
 }, {
     "title": "Lantern",
     "href": "https://github.com/getlantern/forum"
+}, {
+    "title": "lunrjs",
+    "href": "https://lunrjs.com/guides/getting_started.html"
 }]
 
