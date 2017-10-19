@@ -113,9 +113,6 @@
     "title": "Fiddler",
     "href": "http://www.telerik.com/fiddler"
 }, {
-    "title": "Visual Source Safe(VSS)",
-    "href": "https://msdn.microsoft.com/zh-cn/library/ms181038"
-}, {
     "title": "Git",
     "href": "https://git-scm.com/"
 }, {
@@ -149,7 +146,7 @@
     "title": "ASP.NET MVC",
     "href": "https://www.asp.net/mvc"
 }, {
-    "title": "Bootstrap",
+    "title": "Bootstrap中文网站",
     "href": "http://www.bootcss.com/"
 }, {
     "title": "Gulp",
@@ -208,5 +205,10 @@
 }, {
     "title": "lunrjs",
     "href": "https://lunrjs.com/guides/getting_started.html"
+}, {
+    "title": "weixin",
+    "href": "https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1445241432"
+}, {
+    "title": "underscore.js",
+    "href": "http://www.bootcss.com/p/underscore/"
 }]
-

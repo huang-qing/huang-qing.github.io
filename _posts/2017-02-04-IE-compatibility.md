@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      IE 兼容性
-subtitle:   IE Compatibility
+title:      IE 兼容性 
+subtitle:   IE Compatibility IE6~IE10
 date:       2017-02-04
 author:     huangqing
 header-img: img/post-bg-ie.jpg
@@ -32,6 +32,47 @@ tags:
 <!--[if IE 9]> 仅IE9可识别 <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> 非IE浏览器或者IE版本大于IE9 <!--<![endif]-->
 ~~~
+
+## CSS hack
+
+~~~CSS
+
+
+ /* IE6：的样式... */
+_selector{
+    property:value;
+}
+
+/* IE7：的样式... */
++selector{
+    property:value;
+}
+
+/* IE8：的样式... */
+selector{
+    property:value\0;
+}
+
+/* IE6 & IE7：的样式... */
+*selector{
+    property:value;
+}
+
+/* IE6 & IE7 & IE8：的样式... */
+selector{property:value\9;}
+
+/* IE9：的样式... */
+@media all and (min-width:0) {
+    .content .test{
+        background: #f009;
+        }
+}
+
+ /* IE10的样式... */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { 
+   /* IE10的样式... */
+}
+```
 
 ## 指定IE文档版本
 

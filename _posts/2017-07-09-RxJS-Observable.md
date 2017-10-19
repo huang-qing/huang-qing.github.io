@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      RxJS - Observable
-subtitle:   
+subtitle:   Reactive Extensions for JavaScript，Javascript的响应式扩展
 date:       2017-07-09
 author:     huangqing
 header-img: img/post-bg-javascript.jpg
