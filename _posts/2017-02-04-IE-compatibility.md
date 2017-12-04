@@ -35,8 +35,7 @@ tags:
 
 ## CSS hack
 
-~~~CSS
-
+```CSS
 
  /* IE6：的样式... */
 _selector{
@@ -73,6 +72,35 @@ selector{property:value\9;}
    /* IE10的样式... */
 }
 ```
+
+
+## Firefox hack 
+
+```CSS
+
+ /* 去除 input[type="number"] 类型的数字按钮 */
+.hqgrid input[type="number"] {
+    -moz-appearance: textfield;
+}
+```
+
+
+## Chrome hack 
+
+```CSS
+
+/* Chrome浏览器中输入框以及其它表单控件获得焦点时的带颜色边框:设置表单控件的outline属性为none值 */
+input {
+    outline:none
+} 
+
+ /* 去除 input[type="number"] 类型的数字按钮 */
+.hqgrid input::-webkit-outer-spin-button,
+.hqgrid input::-webkit-inner-spin-button {
+    -webkit-appearance: textfield;
+}
+```
+
 
 ## 指定IE文档版本
 
