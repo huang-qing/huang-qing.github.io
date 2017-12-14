@@ -109,6 +109,19 @@ input {
 <meta http-equiv="X-UA-Compatible" content="ie=9">
 ~~~
 
+
+## 取消浏览器文本的选择
+
+```javascript
+var clearSlct = "getSelection" in window ?
+    function () {　　　　
+        window.getSelection().removeAllRanges();　　
+    } :
+    function () {　　　　
+        document.selection.empty();　　
+    };
+```
+
 ## [html5shiv](https://github.com/aFarkas/html5shiv)
 
 This script is the defacto way to enable use of HTML5 sectioning elements in legacy Internet Explorer.

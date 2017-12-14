@@ -63,3 +63,6 @@
 + ngrok
 
 
+```
+ bundle exec jekyll serve
+```
