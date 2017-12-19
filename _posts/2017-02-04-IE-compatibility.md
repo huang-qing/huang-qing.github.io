@@ -114,10 +114,10 @@ input {
 
 ```javascript
 var clearSlct = "getSelection" in window ?
-    function () {　　　　
+    function () {
         window.getSelection().removeAllRanges();　　
     } :
-    function () {　　　　
+    function () {
         document.selection.empty();　　
     };
 ```
