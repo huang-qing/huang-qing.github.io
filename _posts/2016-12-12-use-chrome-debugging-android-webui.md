@@ -6,7 +6,7 @@ date:       2016-12-12
 author:     huangqing
 header-img: img/post-bg-chrome.jpg
 catalog: true
-categories: [chrome]
+categories: [browser]
 tags:
     - chrome
 ---
