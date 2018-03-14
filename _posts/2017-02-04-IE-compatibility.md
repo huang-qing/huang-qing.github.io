@@ -145,3 +145,41 @@ A fast & lightweight polyfill for min/max-width CSS3 Media Queries (for IE 6-8, 
 ## [es6-promise](https://github.com/stefanpenner/es6-promise)
 
 Usage in IE<9
+
+
+## disable text selection while pressing 'shift'
+
+Try a combo of JavaScript and css to prevent the selection in the first place:
+
+
+```javascript
+$('li').attr('unselectable', 'on'); // IE
+```
+
+css (for browsers not IE):
+
+```css
+li {
+            user-select: none; /* CSS3 (little to no support) */
+        -ms-user-select: none; /* IE 10+ */
+       -moz-user-select: none; /* Gecko (Firefox) */
+    -webkit-user-select: none; /* Webkit (Safari, Chrome) */
+}
+```
+
+
+
+Try this after the Shift + click...
+
+```javascript
+document.getSelection().removeAllRanges();
+```
+If that is not effective enough, you might have to also cancel the onselectstart event...
+
+```javascript
+window.onload = function() {
+  document.onselectstart = function() {
+    return false;
+  }
+}
+```
