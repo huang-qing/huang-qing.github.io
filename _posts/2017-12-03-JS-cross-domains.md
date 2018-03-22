@@ -23,6 +23,8 @@ tags:
 
 不同的框架之间可以获取window对象，但却无法获取相应的属性和方法。
 
+[浏览器同源政策及其规避方法(阮一峰)](http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html)
+
 比如，有一个页面，它的地址是http://www.damonare.cn/a.html ， 在这个页面里面有一个iframe，它的src是http://damonare.cn/b.html, 很显然，这个页面与它里面的iframe框架是不同域的，所以我们是无法通过在页面中书写js代码来获取iframe中的东西：
 
 ```html
@@ -271,6 +273,9 @@ loadScript('http://suggestion.baidu.com/su?wd=w',function(){console.log('loaded'
 
 通过script标签引入的js是不受同源策略的限制的。所以我们可以通过script标签引入一个js或者是一个其他后缀形式（如php，jsp等）的文件，此文件返回一个js函数的调用。
 
+![JSONP 实现原理](/images/javascript/323484072-5a3733859025d_articlex.png)
+
+
 ```javascript
 function handleResponse(response){
     console.log('The responsed data is: '+response.data);
@@ -379,7 +384,12 @@ window.onload = function() {
 `CORS`背后的基本思想就是使用自定义的`HTTP头部`让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。
 
 目前，所有浏览器都支持该功能，IE浏览器不能低于IE10。整个CORS通信过程，都是浏览器自动完成，不需要用户参与。
+
 对于开发者来说，CORS通信与同源的AJAX通信没有差别，代码完全一样。浏览器一旦发现AJAX请求跨源，就会自动添加一些附加的头信息，有时还会多出一次附加的请求，但用户不会有感觉。
+
+CORS请求原理:
+
+![](/images/javascript/3236727274-5a37338316b31_articlex.png)
 
 `因此，实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信`。
 
