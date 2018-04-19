@@ -4,9 +4,9 @@ title:      SVG 雪碧图
 subtitle:   svg sprite
 date:       2017-08-08
 author:     huangqing
-header-img: img/post-bg-html.jpg
+header-img: img/post-bg-svg.png
 catalog: true
-categories: [HTML]
+categories: [SVG]
 tags:
     - SVG
 ---

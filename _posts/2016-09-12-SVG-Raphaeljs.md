@@ -4,9 +4,9 @@ title:      Raphael（拉斐尔）
 subtitle:   
 date:       2016-09-12
 author:     huangqing
-header-img: img/post-bg-javascript.jpg
+header-img: img/post-bg-svg.png
 catalog: true
-categories: [javascript]
+categories: [SVG]
 tags:
     - Raphael
     - SVG
