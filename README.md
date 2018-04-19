@@ -63,6 +63,21 @@
 + ngrok
 
 
+## 开发环境配置
+
+安装`python`、`Ruby`、`Node`。
+
+安装插件包：
+```
+npm install
+```
+
+安装`jekyll`：
+```
+gem install jekyll bundler
+```
+
+运行开发环境：
 ```
  bundle exec jekyll serve
 ```

@@ -9,6 +9,7 @@ catalog: true
 categories: [javascript]
 tags:
     - Raphael
+    - SVG
 ---
 
 # Raphael（拉斐尔）
