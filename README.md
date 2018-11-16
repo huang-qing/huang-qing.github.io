@@ -1,7 +1,5 @@
 # [HUANG QING](https://huang-qing.github.io/)
 
-[WiKi](https://github.com/huang-qing/huang-qing.github.io/wiki)
-
 ## Programming Language
 
 + C# 
@@ -49,6 +47,7 @@
 + RxJS
 + Moment.js
 + Raphaël
++ Snap.js
 + three.js
 + Echarts
 + Charts.js

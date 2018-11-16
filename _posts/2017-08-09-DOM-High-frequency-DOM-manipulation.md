@@ -210,8 +210,8 @@ function Loop2() {
 <div class="staff-list" :class="list">
    <ul class="staff-list-ul">
        <li v-for="item in staffList" v-show="isShow($index)">
-           <div>{{{item.staff_name | addSpace}}} </div>
-           <div class="staff_phone">{{item.phone_no}} </div>
+           <div>item.staff_name | addSpace </div>
+           <div class="staff_phone">item.phone_no </div>
        </li>
    </ul>
 </div>
