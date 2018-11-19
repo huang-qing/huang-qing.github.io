@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      SVG-markers
+title:      SVG-Marker
 subtitle:   
 date:       2018-11-15
 author:     huangqing

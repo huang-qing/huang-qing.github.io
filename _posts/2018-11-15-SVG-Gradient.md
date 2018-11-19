@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      SVG-Gradients
+title:      SVG-Gradient
 subtitle:   
 date:       2018-11-15
 author:     huangqing

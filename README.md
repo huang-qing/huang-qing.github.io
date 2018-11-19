@@ -7,6 +7,7 @@
 + TypeScript
 + HTML5
 + CSS3
++ SVG
 + Markdown
 
 
