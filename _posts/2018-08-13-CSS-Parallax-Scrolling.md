@@ -1,3 +1,16 @@
+---
+layout:     post
+title:      CSS Parallax Scrolling
+subtitle:   CSS实现滚动视差
+date:       2018-08-13
+author:     huangqing
+header-img: img/post-bg-css.jpg
+catalog: true
+categories: [CSS]
+tags:
+    - CSS
+---
+
 # CSS实现滚动视差
 
 ## 何为滚动视差

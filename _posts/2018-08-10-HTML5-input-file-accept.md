@@ -1,3 +1,16 @@
+---
+layout:     post
+title:      HTML5 Input
+subtitle:   accept 属性值详解
+date:       2018-08-10
+author:     huangqing
+header-img: img/post-bg-html.jpg
+catalog: true
+categories: [HTML]
+tags:
+    - HTML
+---
+
 # `<input type="file">`的`accept`属性值详解
 
 `accept`可以限制文件的上传类型，比如只上传图片文件、视频文件、音频文件.如下:
