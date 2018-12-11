@@ -63,6 +63,13 @@
 + ngrok
 
 
+## Programming 编程方式
+
++ 命令式编程
++ Object Oriented Programming 面向对象编程
++ Functional Programming 函数式编程
++ Reactive Programming 响应式编程
+
 ## 开发环境配置
 
 安装

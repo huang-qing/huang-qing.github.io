@@ -11,13 +11,41 @@ tags:
     - IE
 ---
 
+## polyfills
 
-
-## HTML Poolyfills
+#### HTML Polyfills
 
 [HTML5 Cross Browser Polyfills](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills?utm_source=tuicool&utm_medium=referral)
 
-## html 版本判断标签
+#### [html5shiv](https://github.com/aFarkas/html5shiv)
+
+This script is the defacto way to enable use of HTML5 sectioning elements in legacy Internet Explorer.
+
+~~~html
+<!--[if lte IE 9]> 
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+~~~
+
+#### [Respond](https://github.com/scottjehl/Respond/)
+
+A fast & lightweight polyfill for min/max-width CSS3 Media Queries (for IE 6-8, and more)
+
+~~~html
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+~~~
+
+#### [es6-promise](https://github.com/stefanpenner/es6-promise)
+
+Usage in IE<9
+
+
+## IE hack 
+
+#### html 版本判断标签
 
 ~~~html
 <!--[if !IE]><!--> 除IE外都可识别 <!--<![endif]-->
@@ -33,7 +61,7 @@ tags:
 <!--[if (gt IE 9)|!(IE)]><!--> 非IE浏览器或者IE版本大于IE9 <!--<![endif]-->
 ~~~
 
-## CSS hack
+#### CSS hack
 
 ```CSS
 
@@ -73,8 +101,46 @@ selector{property:value\9;}
 }
 ```
 
+#### 指定IE文档版本
+
+~~~html
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="X-UA-Compatible" content="ie=9">
+~~~
+
+#### IE无法支持大尺寸CSS
+
+1. `IE7`，`IE8`，`IE9`对CSS文件的长度都有某种限制，超出部分会自动截断
+2. IE9的限制在250K左右
+
+#### IE Table td - position:relative;
+
+在`IE` 使用以下样式，在`td`中同时使用`background-color`、`position:relative`会造成表格的边框无法显示：
+
+```css
+td.formbuilder-table-cell-index {
+    background-color: #DFE3E8;
+    border: 1px dashed #ccc;
+    position: relative;
+}
+```
+
+使用以下的样式解决IE显示问题：
+
+```css
+td.formbuilder-table-cell-index {
+    position: relative;
+    background-color: #DFE3E8;
+    border: 1px dashed #ccc;
+    z-index: -1;
+    background-clip: padding-box;
+    z-index: 1;
+}
+```
 
 ## Firefox hack 
+
+#### 去除数字类型的按钮
 
 ```CSS
 
@@ -84,16 +150,20 @@ selector{property:value\9;}
 }
 ```
 
-
 ## Chrome hack 
 
-```CSS
+####  去除获得焦点时的带颜色边框
 
+```CSS
 /* Chrome浏览器中输入框以及其它表单控件获得焦点时的带颜色边框:设置表单控件的outline属性为none值 */
 input {
     outline:none
-} 
+}
+```
 
+#### 去除数字类型的按钮
+
+```css
  /* 去除 input[type="number"] 类型的数字按钮 */
 .hqgrid input::-webkit-outer-spin-button,
 .hqgrid input::-webkit-inner-spin-button {
@@ -101,90 +171,56 @@ input {
 }
 ```
 
+## hack 
 
-## 指定IE文档版本
-
-~~~html
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta http-equiv="X-UA-Compatible" content="ie=9">
-~~~
-
-
-## 取消浏览器文本的选择
-
-```javascript
-var clearSlct = "getSelection" in window ?
-    function () {
-        window.getSelection().removeAllRanges();　　
-    } :
-    function () {
-        document.selection.empty();　　
-    };
-```
-
-## [html5shiv](https://github.com/aFarkas/html5shiv)
-
-This script is the defacto way to enable use of HTML5 sectioning elements in legacy Internet Explorer.
-~~~html
-<!--[if lte IE 9]> 
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-~~~
-
-## [Respond](https://github.com/scottjehl/Respond/)
-
-A fast & lightweight polyfill for min/max-width CSS3 Media Queries (for IE 6-8, and more)
-
-~~~html
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
-~~~
-
-## [es6-promise](https://github.com/stefanpenner/es6-promise)
-
-Usage in IE<9
-
-
-## disable text selection while pressing 'shift'
-
-Try a combo of JavaScript and css to prevent the selection in the first place:
-
-
-```javascript
-$('li').attr('unselectable', 'on'); // IE
-```
-
-css (for browsers not IE):
-
-```css
-li {
-            user-select: none; /* CSS3 (little to no support) */
-        -ms-user-select: none; /* IE 10+ */
-       -moz-user-select: none; /* Gecko (Firefox) */
-    -webkit-user-select: none; /* Webkit (Safari, Chrome) */
-}
-```
+#### 取消浏览器文本的选择
 
 
 
-Try this after the Shift + click...
++ css (for browsers not IE):
 
-```javascript
-document.getSelection().removeAllRanges();
-```
-If that is not effective enough, you might have to also cancel the onselectstart event...
+    ```css
+    li {
+                user-select: none; /* CSS3 (little to no support) */
+            -ms-user-select: none; /* IE 10+ */
+        -moz-user-select: none; /* Gecko (Firefox) */
+        -webkit-user-select: none; /* Webkit (Safari, Chrome) */
+    }
+    ```
 
-```javascript
-window.onload = function() {
-  document.onselectstart = function() {
-    return false;
-  }
-}
-```
++ 阻止默认事件
 
-## IE无法支持大尺寸CSS
+    ```javascript
+    this.elem.on("mousedown", function(e) {
+        ...
+        e.preventDefault();
+    }
+    ```
 
-1. `IE7`，`IE8`，`IE9`对CSS文件的长度都有某种限制，超出部分会自动截断
-2. IE9的限制在250K左右
++ 元素禁止
+
+    ```javascript
+    $('li').attr('unselectable', 'on'); // IE
+    ```
+
++ 全局禁止
+
+    ```javascript
+    window.onload = function() {
+    document.onselectstart = function() {
+        return false;
+    }
+    }
+    ```
+
++ 清除全部选中的文本
+
+    ```javascript
+    var clearSlct = "getSelection" in window ?
+        function () {
+            window.getSelection().removeAllRanges();　　
+        } :
+        function () {
+            document.selection.empty();　　
+        };
+    ```
