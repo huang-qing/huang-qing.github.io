@@ -138,6 +138,14 @@ td.formbuilder-table-cell-index {
 }
 ```
 
+#### 判断IE浏览器 
+
+IE 8 9 10 11 Edge
+
+```javascript
+!!window.ActiveXObject || "ActiveXObject" in window
+```
+
 ## Firefox hack 
 
 #### 去除数字类型的按钮
@@ -207,9 +215,9 @@ input {
 
     ```javascript
     window.onload = function() {
-    document.onselectstart = function() {
-        return false;
-    }
+        document.onselectstart = function() {
+            return false;
+        }
     }
     ```
 

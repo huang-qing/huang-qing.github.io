@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      SVG-Path Ellipse Quadratic Bezier
-subtitle:   绘制椭圆弧 贝塞尔曲线
+title:      SVG-Path Ellipse
+subtitle:   绘制椭圆弧 
 date:       2018-11-29
 author:     huangqing
 header-img: img/post-bg-svg.png
@@ -79,94 +79,3 @@ SVG椭圆弧路径指令说明：
 
 `x-axis-rotation` 又是什么意思呢? b, c, d, e 产生的前提是 椭圆的 x 轴与用户坐标系的 x 轴是平行的.
 f 图表示椭圆 x 轴相对于用户坐标系的` x 轴旋转30度`所产生的椭圆弧. 灰色的部分表示原来产生的椭圆弧.
-
-
-#  SVG Quadratic Bezier
-
-[http://cubic-bezier.com/](http://cubic-bezier.com/)
-
-#### 二次贝塞尔曲线
-
-
-```css
-Q(q) cx cy x y
-```
-
-从当前点画一条到`(x, y)`的二次贝塞尔曲线, 曲线的控制点为`(cx, cy)`. 
-
-![](/images/svg/1415845715278-bezier-quadratic-animation.gif)
-
-```css
-T(t) x y	
-```
-
-此命令`只能跟在一个 Q 命令使用`, 假设 `Q` 命令生成曲线 `s`, `T` 命令的作用是从 `s `的终点再画一条到`(x y)`的二次贝塞尔曲线, `曲线的控制点为 s 控制点关于 s 终点的对称点`. T 命令生成的曲线会非常平滑
-
-实例：
-
-![](/images/svg/3042485223-56acefa99077e_articlex.png)
-
-
-以上曲线的路径表示是: 
-```html
-<path d="M200,300 Q400,50 600,300 T1000,300"/>
-```
-我们可以看出:
-
-A 是起点, B 是终点, C 就是控制点.
-
-找出 AC 的重点 D, BC 的重点 E, 连接 DE, 找出其中点 F, F 即这条曲线前半段的一个切点.
-
-再来看 T 命令, 其实 T 命令是 Q 的一个简写.
-
-其控制点 H 就是上个 Q 命令的控制点 C 关于终点 B 的对称点.
-
-使用 T 命令产生的曲线往往比较顺滑。
-
-#### 三次贝塞尔曲线
-
-
-```css
-C(c) cx1 cy1 cx2 cy2 x y	
-```
-
-从`当前点`画一条到`(x, y)`的三次贝塞尔曲线, 曲线的`开始控制点`和`终点控制点`为别为 `(cx1, cy1)`, `(cx2, cy2)`.
-
-![](/images/svg/21152048-9b5dee31b19349428c453b8bd5e20a3d.gif)
-
-```css
-S(s) cx2 cy2 x y	
-```
-
-此命令`只能跟在 C 命令后使用`, 假设 `C` 命令生成曲线 s, `S` 命令的作用是再画一条到 `(x, y)`的三次贝塞尔曲线,曲线的终点控制点是 `(cx2, cy2)`, `曲线的开始控制点是 s 的终点控制点关于 s 终点的对称点`.
-
-
-实例：
-
-![](/images/svg/3627645763-56acefbe5aa99_articlex.png)
-
-```html
-<path d="M100,200 C100,100 250,100 250,200 S400,300 400,200"/>
-```
-
-前半段曲线(C 命令) s1:
-
-起点 `A`, 终点 `B`, 起点控制点 `C`, 终点控制点 `D`, 连接 AC, BD, CD;
-
-找到 CD 中点 F, 连接 AC 中点 E 与 F, 连接 BD 中点 G 与 F;
-
-连接 EF, FG, 连接 EF 中点 H 与 FG 中点 I;
-
-I 即为前半段曲线的切点;
-
-后半段曲线(S 命令) s2:
-
-S 只能跟在 C 命令后使用;
-
-s2 的起点 `B`, 终点 `L`, 终点控制点 `K`;
-
-s2 的起点控制点是 s1 的终点控制点 D 关于 s1终点 B 的对称点
-
-下图是更多关于三次贝塞尔曲线的例子:
-
-![](/images/svg/3330912387-56acefcda6f67_articlex.png)
