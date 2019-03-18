@@ -1,26 +1,26 @@
 ---
-layout:     post
-title:      Visual Studio Code ESLint 插件
-subtitle:   Visual Studio Code 下使用 ESLint
-date:       2017-05-24
-author:     huangqing
+layout: post
+title: Visual Studio Code ESLint 插件
+subtitle: Visual Studio Code 下使用 ESLint
+date: 2017-05-24
+author: huangqing
 header-img: img/post-bg-vscode.jpg
 catalog: true
 categories: [vscode]
 tags:
-    - vscode
-    - eslint
+  - vscode
+  - eslint
 ---
 
 # Visual Studio Code ESLint 插件
 
-## 安装ESLint vscode 插件
+## 安装 ESLint vscode 插件
 
 ESLint dbaeumer.vscode-eslint
 
 [eslint 中文网站](http://eslint.cn/docs/user-guide/configuring)
 
-## 安装ESLint
+## 安装 ESLint
 
 ```sql
 cnpm install -g eslint
@@ -30,63 +30,73 @@ cnpm install eslint-plugin-promise --save-dev
 
 ## settings.json 文件示例
 
-F1调出控制台:
+F1 调出控制台:
 
-``` sql
+```sql
 >Open User Settings
 ```
 
-配置VSCODE全局 settings.json:
+配置 VSCODE 全局 settings.json:
 
-``` json 
+```json
 {
-    // ESLint
-    "eslint.autoFixOnSave": true,
-    "eslint.options": {
-        "rules": {
-            "semi": 0,
-            "indent": 0,
-            "one-var": 0,
-            "space-before-function-paren": 0
-        }
+  // ESLint
+  "eslint.autoFixOnSave": true,
+  "eslint.options": {
+    "rules": {
+      "semi": 0,
+      "indent": 0,
+      "one-var": 0,
+      "space-before-function-paren": 0
     }
+  }
 }
 ```
 
 ## .eslintrc.json 文件示例
 
-~~~json
+```json
 {
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "jsx": true
-        }
-    },
-    "rules": {
-        "semi": 2
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
     }
+  },
+  "rules": {
+    "indent": 0,
+    "linebreak-style": ["error", "windows"],
+    "no-console": "off",
+    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    "no-unused-vars": [
+      2,
+      {
+        "args": "none" // 参数不检查
+      }
+    ]
+  }
 }
-~~~
+```
 
 ## package.json 文件示例
 
-~~~json
+```json
 {
-    "env": {
-        "browser": true
-    },
-    "rules": {
-        // Override our default settings just for this directory
-        "eqeqeq": "warn",
-        "strict": "off"
-    }
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    // Override our default settings just for this directory
+    "eqeqeq": "warn",
+    "strict": "off"
+  }
 }
-~~~
+```
 
------
-
+---
 
 ## 配置参数
 
@@ -286,16 +296,17 @@ rules: {
 
 # Error
 
->Error: Cannot find module 'eslint-config-defaults/configurations/eslint'
+> Error: Cannot find module 'eslint-config-defaults/configurations/eslint'
 
-~~~javascript
+```javascript
 $ npm install --save eslint-config-defaults
-~~~
-----
+```
 
->The react/wrap-multilines rule is deprecated. Please use the react/jsx-wrap-multilines rule instead.
+---
 
-~~~javascript
+> The react/wrap-multilines rule is deprecated. Please use the react/jsx-wrap-multilines rule instead.
+
+```javascript
 eslint --init
 
 ? How would you like to configure ESLint? Answer questions about your style
@@ -309,16 +320,18 @@ eslint --init
 ? What line endings do you use? Windows
 ? Do you require semicolons? Yes
 ? What format do you want your config file to be in? JavaScript
-~~~
-----
+```
 
-> error  Unexpected console statement  no-console
+---
+
+> error Unexpected console statement no-console
 
 `.eslintrc.js`
 
-~~~javascript
+```javascript
 "rules": {
     'no-console': 'off'
 }
-~~~
-----
+```
+
+---
