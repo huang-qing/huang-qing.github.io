@@ -11,7 +11,7 @@ tags:
     - CSS
 ---
 
-# Flexbox 
+## Flexbox 
 
 [CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS)
 
@@ -25,16 +25,33 @@ tags:
 
 [Autoprefixer](https://www.npmjs.com/package/autoprefixer)
 
+## 布局问题
+
+![](/images/css/bg2015071001.gif)
+
 ## Flexbox属性图
 
 ![](/images/css/20180322154438.jpg)
 
 从第一个子节点可以看到`Flexbox`由`Flex容器`和`Flex项目`组成，容器即父元素，项目即子元素。他们之间的一些关系可以这样来表示：
 
-![](/images/css/20180322154615.jpg)
-
 
 ## Flex容器
+
+![](/images/css/20180322154615.jpg)
+
+![](/images/css/bg2015071004.png)
+
+容器默认存在两根轴：水平的主轴（`main axis`）和垂直的交叉轴（`cross axis`）。主轴的开始位置（与边框的交叉点）叫做`main start`，结束位置叫做`main end`；交叉轴的开始位置叫做`cross start`，结束位置叫做`cross end`。
+
+项目默认沿主轴排列。单个项目占据的主轴空间叫做`main size`，占据的交叉轴空间叫做`cross size`。
+
++ flex-direction
++ flex-wrap
++ flex-flow
++ justify-content
++ align-items
++ align-content
 
 #### `display:flex`
 
@@ -55,6 +72,8 @@ tags:
 
 网页展示效果如下：
 
+![](/images/css/bg2015071005-flex-direction.png)
+
 ![](/images/css/20180322154941.jpg)
 
 #### `flex-warp`
@@ -67,7 +86,22 @@ tags:
 
 网页效果见图:
 
+![](/images/css/flex-wrap-bg2015071006.png)
+
 ![](/images/css/20180322155110.jpg)
+
+
+（1）nowrap（默认）：不换行。
+
+![](/images/css/flex-wrap-nowrap-bg2015071007.png)
+
+（2）wrap：换行，第一行在上方。
+
+![](/images/css/flex-wrap-bg2015071008.jpg)
+
+（3）wrap-reverse：换行，第一行在下方。
+
+![](/images/css/flex-wrap-wrap-reverse-bg2015071009.jpg)
 
 #### `flex-flow`
 
@@ -98,6 +132,7 @@ tags:
 
 + `justify-content:space-around`;伸缩项目平均的分布在主轴上面，并且第一个元素到主轴起点距离和最后一个元素到主轴终点的距离相等，且等于中间元素两两的间距的一半。完美的平均分配，这个布局在阿里系中很常见。
 
+![](/images/css/bg2015071010-justify-content.png)
 
 ![](/images/css/20180322155516.jpg)
 
@@ -116,6 +151,8 @@ tags:
 
 下面demo只展示`center`和`stretch`的栗子，其他几个可以参考`flex-start`和`flex-end`那样。
 
+![](/images/css/align-items-bg2015071011.png)
+
 ![](/images/css/20180322155832.jpg)
 
 #### `align-content`
@@ -127,56 +164,69 @@ tags:
 + `align-content: stretch`;默认值,各行将会伸展以占用剩余的空间。
 + 其他可以参考`[justify-content]`用法。
 
-具体图片来至w3.org官方文档；
+
+![](/images/css/align-content-bg2015071012.png)
 
 ![](/images/css/20180322160044.jpg)
 
 ## Flex项目
 
++ order
++ flex-grow
++ flex-shrink
++ flex-basis
++ flex
++ align-self
+
 主要是3个，`order`，`flex`（`flex-grow`，`flex-shrink`，`flex-basis`的组合），`align-self`；用来比较多的是前两个。
 
-譬如我们想控制一个`container`中有4个box，想box4为一个显示，box1为最后一个显示。只需要 这样
 
-```html
-<style>
-.container{
-        display: flex;
-    }
-    .box1{
-        order:1;
-    }
-    .box4{
-        order:-1;
-    }
-</style>
-<div class="container">
-    <div class="box1">1</div>
-    <div class="box2">2</div>
-    <div class="box3">3</div>
-    <div class="box4">4</div>
-</div>
-```
+#### order
 
-显示效果就这样了：
+`order`属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。
 
-![](/images/css/20180322160237.jpg)
+![](/images/css/order-bg2015071013.png)
 
 #### flex
 
 `[flex]`属性可以用来指定可伸缩长度的部件，是`flex-grow`（扩展比例）,`flow-shrink`（收缩比例）,`flex-basis`（伸缩基准值）这个三个属性的缩写写法，建议大家采用缩写的方式而不是单独来使用这3个属性。
 
 ```css
+/* flex-grow是必须得flex-shrink和flow-basis是可选的  */
 flex:none | [ <'flex-grow'> ?<'flew-shrink'> || <'flow-basis'>]
-// flex-grow是必须得flex-shrink和flow-basis是可选的
+
 ```
 
-+ `flex-grow`:;其中number作为扩展比例，没有单位，初始值是`0`，主要用来决定伸缩容器剩余空间按比例应扩展多少空间。
-+ `flex-grow`:;其中number作为收缩比例，没有单位，初始值是`1`，也就是剩余空间是负值的时候此伸缩项目相对于伸缩容器里其他伸缩项目能收缩的空间比例，在收缩的时候收缩比率会以`[flex-basis]`伸缩基准值加权。
-+ `flex-basis`:|auto;默认是`auto`也就是根据可伸缩比率计算出剩余空间的分布之前，伸缩项目主轴长度的起始数值。若在「flex」缩写省略了此部件，则「flex-basis」的指定值是长度零。
+`flex-grow`:其中number作为扩展比例，没有单位，初始值是`0`，主要用来决定伸缩容器剩余空间按比例应扩展多少空间。
+
+![](/images/css/flex-grow-bg2015071014.png)
+
+如果所有项目的`flex-grow`属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的`flex-grow`属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。
+
+`flex-shrink`:其中number作为收缩比例，没有单位，初始值是`1`，也就是剩余空间是负值的时候此伸缩项目相对于伸缩容器里其他伸缩项目能收缩的空间比例，在收缩的时候收缩比率会以`[flex-basis]`伸缩基准值加权。
+
+如果一个项目的`flex-shrink`属性为0，其他项目都为1，则空间不足时，前者不缩小。
+
+负值对该属性无效。
+
+![](/images/css/flex-shrink-bg2015071015.jpg)
+
+
+`flex-basis`:auto;默认是`auto`也就是根据可伸缩比率计算出剩余空间的分布之前，伸缩项目主轴长度的起始数值。若在「flex」缩写省略了此部件，则「flex-basis」的指定值是长度零。
 
 flex-basis用图来表示就是这样：
 
 ![](/images/css/20180322160710.jpg)
+
+```css
+.item {
+  flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+}
+```
+
+该属性有两个快捷值：`auto (1 1 auto)` 和` none (0 0 auto)`。
+
+建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。
 
 #### align-self
 
@@ -185,6 +235,15 @@ flex-basis用图来表示就是这样：
 ```css
 align-self: auto | flex-start | flex-end | center | baseline | stretch
 ```
+
+![](/images/css/align-self-bg2015071016.png)
+
+
+## 总结
+
+![](/images/css/6b7dfw9wix.jpeg)
+![](/images/css/0vlatyihcm.jpeg)
+![](/images/css/1n0cjkcpps.jpeg)
 
 ## 兼容性
 

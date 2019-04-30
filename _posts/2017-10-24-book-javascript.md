@@ -9,7 +9,7 @@ catalog: true
 categories: [javascript]
 tags:
     - javascript
-    - book
+    - Book
 ---
 
 # 入门
