@@ -6,9 +6,9 @@ date:       2016-12-21
 author:     huangqing
 header-img: img/post-bg-vscode.jpg
 catalog: true
-categories: [visual-studio]
+categories: [VisualStudio]
 tags:
-    - visual-studio
+    - visual studio
 ---
 
 

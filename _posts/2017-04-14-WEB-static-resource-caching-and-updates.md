@@ -6,7 +6,7 @@ date:       2017-04-14
 author:     huangqing
 header-img: img/post-bg-technology-stack.jpg
 catalog: true
-categories: [technology-stack]
+categories: [TechnologyStack]
 tags:
     - web
     - deploy

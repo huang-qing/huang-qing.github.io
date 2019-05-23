@@ -6,7 +6,7 @@ date:       2017-10-19
 author:     huangqing
 header-img: img/post-bg-github-cup.jpg
 catalog: true
-categories: [github]
+categories: [GitHub]
 tags:
     - jekyll
     - Liquid

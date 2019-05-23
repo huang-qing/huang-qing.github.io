@@ -6,7 +6,7 @@ date:       2017-06-29
 author:     huangqing
 header-img: img/post-bg-framework-app.jpg
 catalog: true
-categories: [framework]
+categories: [TechnologyStack]
 tags:
     - App
     - framework

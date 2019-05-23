@@ -6,7 +6,7 @@ date:       2017-03-16
 author:     huangqing
 header-img: img/post-bg-gulp.png
 catalog: true
-categories: [web]
+categories: [Gulp]
 tags:
     - gulp
 ---

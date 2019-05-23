@@ -6,7 +6,7 @@ date:       2017-04-11
 author:     huangqing
 header-img: img/post-bg-git.jpg
 catalog: true
-categories: [Git]
+categories: [GitHub]
 tags:
     - Git
     - vscode    

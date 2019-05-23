@@ -6,7 +6,7 @@ date:       2016-06-11
 author:     huangqing
 header-img: img/post-bg-framework-app.jpg
 catalog: true
-categories: [framework]
+categories: [TechnologyStack]
 tags:
     - App
     - deploy

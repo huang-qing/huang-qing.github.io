@@ -6,7 +6,7 @@ date:       2017-10-24
 author:     huangqing
 header-img: img/post-bg-javascript.jpg
 catalog: true
-categories: [javascript]
+categories: [JavaScript]
 tags:
     - javascript
     - Book

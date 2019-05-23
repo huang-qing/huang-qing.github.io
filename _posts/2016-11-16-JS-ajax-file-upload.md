@@ -6,7 +6,7 @@ date:       2016-11-16
 author:     huangqing
 header-img: img/post-bg-ajax.jpg
 catalog: true
-categories: [javascript]
+categories: [JavaScript]
 tags:
     - ajax
 ---

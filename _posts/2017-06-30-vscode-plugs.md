@@ -6,7 +6,7 @@ date:       2017-06-30
 author:     huangqing
 header-img: img/post-bg-vscode.jpg
 catalog: true
-categories: [vscode]
+categories: [VSCode]
 tags:
     - vscode
 ---

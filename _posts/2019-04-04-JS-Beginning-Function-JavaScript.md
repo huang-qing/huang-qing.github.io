@@ -1,16 +1,17 @@
 ---
 layout: post
 title: JS ES6函数式编程
-subtitle: 柯里化
+subtitle: 柯里化 FP 
 date: 2019-04-04
 author: huangqing
 header-img: img/post-bg-javascript.jpg
 catalog: true
-categories: [javascript]
+categories: [Programming]
 tags:
   - javascript
   - Book
   - ES6
+  - FP
 ---
 
 ## 第一章：

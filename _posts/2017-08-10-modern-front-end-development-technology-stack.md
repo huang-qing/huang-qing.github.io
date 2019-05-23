@@ -6,7 +6,7 @@ date:       2017-08-10
 author:     huangqing
 header-img: img/post-bg-technology-stack.jpg
 catalog: true
-categories: [technology-stack]
+categories: [TechnologyStack]
 tags:
     - 前端
     - 技术栈    

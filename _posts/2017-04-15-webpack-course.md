@@ -6,9 +6,9 @@ date:       2017-04-15
 author:     huangqing
 header-img: img/post-bg-webpack.jpeg
 catalog: true
-categories: [web]
+categories: [Web]
 tags:
-    - web
+    - webpack
     - deploy
 ---
 

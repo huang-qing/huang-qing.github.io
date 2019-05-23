@@ -6,7 +6,7 @@ date:       2017-03-08
 author:     huangqing
 header-img: img/post-bg-jquery.png
 catalog: true
-categories: [javascript]
+categories: [JavaScript]
 tags:
     - jquery
 ---

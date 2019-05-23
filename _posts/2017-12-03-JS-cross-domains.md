@@ -6,7 +6,7 @@ date: 2017-12-03
 author: huangqing
 header-img: img/post-bg-javascript.jpg
 catalog: true
-categories: [javascript]
+categories: [JavaScript]
 tags:
   - 跨域
 ---

@@ -6,7 +6,7 @@ date:       2017-02-02
 author:     huangqing
 header-img: img/post-bg-fiddler.jpg
 catalog: true
-categories: [fiddler]
+categories: [Web]
 tags:
     - fiddler
 ---

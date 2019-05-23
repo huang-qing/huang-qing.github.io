@@ -6,7 +6,7 @@ date:       2018-01-22
 author:     huangqing
 header-img: img/post-bg-javascript.jpg
 catalog: true
-categories: [javascript]
+categories: [JavaScript]
 tags:
     - javascript project
 ---
