@@ -8,10 +8,8 @@ header-img: img/post-bg-github-cup.jpg
 catalog: true
 categories: [TechnologyStack]
 tags:
-    - 
+    - roadmap
 ---
-
-# 技术关键字
 
 面向对象编程以状态为中心
 
@@ -22,3 +20,8 @@ tags:
 用面向对象范式来构建模型，用函数式编程和响应式编程来构建行为和处理事件
 
 面向对象编程是典型的命令式编程，而响应式编程则鼓励我们写声明式的程序，也就是表达做什么，而不是表达怎么做
+
+
+![](/images/technology-stack/687474707.png)
+
+![](/images/technology-stack/React-cn.png)
