@@ -1,6 +1,6 @@
 ---
 layout: post
-title: stylus
+title: Stylus
 subtitle: 富于表现力、动态的、健壮的 CSS
 date: 2019-05-30
 author: huangqing
@@ -34,6 +34,13 @@ stylus -w style.styl -o style.css
 ```
 
 You can also try all stylus features on stylus-lang.com, build something with stylus on codepen or integrate stylus with `gulp` using `gulp-stylus` or `gulp-accord`.
+
+
+## vscode中自动格式化stylus设置
+
+安装 `stylus Supremacy` 插件
+
+![](/images/vscode/2019-06-04_102742.png)
 
 ## Stylus 特性
 
@@ -419,9 +426,7 @@ border-radius()
 另外一个很赞的应用是特定的私有前缀支持——例如 IE 浏览器的透明度：
 
 ```css
-support-for-ie?=trueopacity(n)opacitynifsupport-for-iefilterunquote('progid:DXImageTransform.Microsoft.Alpha(Opacity='+round(n * 100)+ ')')
-
-#logo
+support-for-ie?=trueopacity(n)opacitynifsupport-for-iefilterunquote('progid:DXImageTransform.Microsoft.Alpha(Opacity='+round(n * 100)+')')#logo
   &: hover opacity 0.5;
 ```
 
@@ -885,6 +890,7 @@ stylus(str)
 ## 字符转码(Char Escaping)
 
 转码
+
 Stylus 可以字符转码。这可以让字符变成标识符，或是渲染成字面量。
 
 例如：
