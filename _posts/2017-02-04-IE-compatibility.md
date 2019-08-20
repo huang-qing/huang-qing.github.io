@@ -75,7 +75,7 @@ _selector{
     property:value;
 }
 
-/* IE8：的样式... */
+/* IE8、IE11：的样式... */
 selector{
     property:value\0;
 }
