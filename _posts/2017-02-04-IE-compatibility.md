@@ -101,6 +101,17 @@ selector{property:value\9;}
 }
 ```
 
+```CSS
+
+.ui-news p{
+    color:#000; /*for all*/
+    color:#111\9; /*for all ie*/
+    color:#222\0; /*for ie8 and later,opera without webkit*/
+    color:#333\9\0; /*for ie9 and later*/
+}
+
+```
+
 #### 指定IE文档版本
 
 ~~~html
