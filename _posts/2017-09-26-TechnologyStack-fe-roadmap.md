@@ -4,7 +4,7 @@ title:      技术关键字
 subtitle:   
 date:       2017-09-25
 author:     huangqing
-header-img: img/post-bg-github-cup.jpg
+header-img: img/post-bg-technology-stack.jpg
 catalog: true
 categories: [TechnologyStack]
 tags:

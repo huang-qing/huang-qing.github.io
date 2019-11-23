@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
     // Project configuration.
     grunt.initConfig({
@@ -24,10 +24,30 @@ module.exports = function(grunt) {
                     cleancss: true
                 },
                 files: {
-                    "css/<%= pkg.name %>.min.css": "less/<%= pkg.name %>.less"
+                    "css/<%= pkg.name %>.min.css": "less/<%= pkg.name %>.less",
+                    "css/hux-blog.min.css": "css/hux-blog.css"
                 }
             }
         },
+        // css: {
+        //     expanded: {
+        //         options: {
+        //             paths: ["css"]
+        //         },
+        //         files: {
+        //             "css/<%= pkg.name %>.css": "less/<%= pkg.name %>.less"
+        //         }
+        //     },
+        //     minified: {
+        //         options: {
+        //             paths: ["css"]
+        //         },
+        //         files: {
+        //             "css/xx.min.css": "css/hux-blog.less"
+        //         }
+        //     }
+
+        // },
         banner: '/*!\n' +
             ' * <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
             ' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
@@ -69,5 +89,7 @@ module.exports = function(grunt) {
 
     // Default task(s).
     grunt.registerTask('default', ['uglify', 'less', 'usebanner']);
+
+    grunt.registerTask('css2',['css']);
 
 };

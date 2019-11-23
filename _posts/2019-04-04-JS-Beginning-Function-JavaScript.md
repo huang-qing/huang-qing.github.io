@@ -86,7 +86,9 @@ cat jsBook | grep -i "composing" | wc
 组合不是命令行特有的，它是函数式编程的核心。
 #### 1.8 关于js
 js是一门面对对象的语言，不是一种纯函数语言，更像是一种多范式语言，但是非常适合函数式编程。
+
 ## 第二章：js函数基础
+
 今天很多浏览器还不支持ES6，我们可以通过转换编译器babel，将ES6转换为ES5代码。
 
 ```javascript
@@ -115,7 +117,9 @@ a = 1 // -> Uncaught ReferenceError: a is not defined; 此处直接报错
 ```
 在函数内部如果用var声明变量和不用时有很大差别，用var声明的是局部变量，在函数外部访问这个变量是访问不到的，没var声明的是全局变量。在函数外部是可以访问到的。
 如果你不使用var命令指定，在全局状态下定一个变量。在严格模式下这段代码会报错，因为全局变量在js中非常有害。
+
 ## 第三章：高阶函数
+
 高阶函数（HOC）：
 
 1. 接收函数作为参数
@@ -123,17 +127,20 @@ a = 1 // -> Uncaught ReferenceError: a is not defined; 此处直接报错
 3. 接收函数作为参数且返回函数作为输出
 
 满足以上三个之一的函数就是高阶函数。
-#### 3.1 理解数据
-3.1.1 js中函数为一等公民：
+
+### 3.1 理解数据
+
+#### 3.1.1 js中函数为一等公民：
 
 因为函数也是js中的一种数据类型，可以被赋值给变量，作为参数传递，也可被其他函数返回。
 
-3.1.2 把一个函数存入变量
+#### 3.1.2 把一个函数存入变量
+
 ```javascript
 let fn = () => {}  //fn就是一个指向函数数据类型的变量,即函数的引用
 fn() //调用函数，即执行fn指向的函数
 ```
-3.1.3 函数作为参数传入
+#### 3.1.3 函数作为参数传入
 
 ```javascript
 var tellType = arg =>{
@@ -146,7 +153,7 @@ var tellType = arg =>{
 var fn = () => {console.log('i am a function')} 
 tellType(fn) //函数作为参数传入
 ```
-3.1.4 返回函数
+#### 3.1.4 返回函数
 
 String是js的内置函数，注意：只返回了函数的引用，并没有执行函数
 ```javascript
@@ -154,11 +161,14 @@ let crazy = () =>{ return String }
 crazy() // String() { [native code] }
 crazy()('HOC') // "HOC"
 ```
-## 3.2 抽象和高阶函数
+### 3.2 抽象和高阶函数
+
 高阶函数就是定义抽象
 
 #### 3.2.1通过高阶函数实现抽象
+
 `forEach`实现遍历数组
+
 ```javascript
 const forEach = (array,fn)=>{
   for(let i=0;i<array.length;i++){
@@ -166,7 +176,9 @@ const forEach = (array,fn)=>{
   }
 }
 ```
+
 `forEachObject`实现遍历对象
+
 ```javascript
 const forEachObject = (obj,fn)=>{
     for(var property in obj){
@@ -176,21 +188,31 @@ const forEachObject = (obj,fn)=>{
     }
 }
 ```
+
 注意：forEach和forEachObject都是高阶函数，他们使开发者专注于任务，而抽象出遍历的部分。
-unless函数：如果predicate为false，则调用fn
+
+`unless`函数：如果`predicate`为`false`，则调用`fn`
+
+```javascript
 const unless = (predicate,fn)=>{
     if(!predicate)
         fn()
 }
+```
 
 查找一个列表中的偶数
+
+```javascript
 forEach([1,2,3,4,6,7],(number)=>{
     unless((number%2),()=>{
         console.log(number,"is even")
     })
 })
+```
 
 如果我们操作的是一个Number而不是array
+
+```js
 const times = (time,fn)=>{
     for(var i=0;i<time;i++){
         fn(i)
@@ -201,15 +223,25 @@ times(100,function(n){
         console.log(n, "is even")
     })
 })
+```
 
-3.3 真实的高阶函数
-a.every(function(element, index, array))
+### 3.3 真实的高阶函数
+
+`a.every(function(element, index, array))`
+
 every是所有函数的每个回调函数都返回true的时候才会返回true，当遇到false的时候终止执行，返回false。
-a.some(function(element, index, array))
+
+`a.some(function(element, index, array))`
+
 some函数是“存在”有一个回调函数返回true的时候终止执行并返回true，否则返回false
+
 在空数组上调用every返回true，some返回false。
-3.3.1 every函数
+
+#### 3.3.1 every函数
+
 every函数接受两个参数：一个数组和一个函数。它使用传入的函数检查数组的所有元素是否为true, 都为true才返回true
+
+```js
 const every = (arr,fn)=>{
     let result = true;
     for(let i =0;i<arr.length;i++){
@@ -218,8 +250,11 @@ const every = (arr,fn)=>{
     return true;
 }
 every([NaN,NaN,NaN],isNaN)
+```
 
 for..of循环：ES6中用于遍历数组元素的方法，重写every方法
+
+```js
 const every = (arr,fn)=>{
     let result = true;
     for(const element of arr){
@@ -227,9 +262,13 @@ const every = (arr,fn)=>{
     }
     return true;
 }
+```
 
-3.3.2 some函数
+#### 3.3.2 some函数
+
 some函数接受两个参数：一个数组和一个函数。它使用传入的函数检查数组的所有元素是否为true, 只要有一个为true就返回true
+
+```js
 const some = (arr,fn)=>{
     let result = false;
     for(const element of arr){
@@ -239,13 +278,21 @@ const some = (arr,fn)=>{
 }
 
 some([5,NaN,NaN],isNaN)
+```
 
-3.3.3 sort函数
+#### 3.3.3 sort函数
+
 sort函数是一个高阶函数，它接受一个函数作为参数，该函数帮助sort函数决定排序逻辑, 是一个改变原数组的方法。
+
+```js
 arr.sort([compareFunc])
+```
 
 compareFunc是可选的，如果compareFunc未提供，元素将被转换为字符串并按Unicode编码点顺序排列。
+
 compareFunc应该实现下面的逻辑
+
+```js
 function compareFunc(a,b){
     if(根据某种排序标准a<b){
         return -1
@@ -255,8 +302,11 @@ function compareFunc(a,b){
     }
     return 0;
 }
+```
 
 具体例子
+
+```js
 var friends = [{name: 'John', age: 30},
         {name: 'Ana', age: 20},
         {name: 'Chris', age: 25}];
@@ -264,22 +314,21 @@ var friends = [{name: 'John', age: 30},
 function compareFunc(a,b){
     return (a.age<b.age)?-1:(a.age>b.age)?1:0
 }    
+```
 
 写成以下也ok，按照age升序排列
+
+```js
 function compareFunc(a,b){
     return a.age>b.age
 }  
-
 friends.sort(compareFunc)
-
-
-
-
-
+```
 
 sort是改变原数组的方法，friends按照age升序排列
 
 如果要比较不同的属性，我们需要重复编写比较代码。下面新建一个sortBy函数，允许用户基于传入的属性对对象数组排序。
+```js
 const sortBy = (property)=>{
     return (a,b) => {
         return (a[property]<b[property])?-1:(a[property]>b[property])?1:0
@@ -291,22 +340,33 @@ var friends = [{name: 'John', age: 30},
         {name: 'Chris', age: 25}];
 
 friends.sort(sortBy('age'))
+```
+注意：sortBy函数接受一个属性并返回另一个函数，这个返回的函数就作为compareFunc传递给sort函数，持有property参数值的返回函数之所以能够运行是因为js支持闭包。
 
-注意：sortBy函数接受一个属性冰返回另一个函数，这个返回的函数就作为compareFunc传递给sort函数，持有property参数值的返回函数之所以能够运行是因为js支持闭包。
-第四章：高阶函数与闭包
-4.1理解闭包
-4.1.1什么是闭包
+## 第四章：高阶函数与闭包
+
+### 4.1理解闭包
+
+#### 4.1.1什么是闭包
+
 简言之，闭包是一个内部函数，它是在一个函数内部的函数。
+
+```js
 function outer(){
     function inner(){   
     }
 }
+```
 
-函数inner称为闭包函数，闭包如此强大的原因在于它对作用域链的访问。
+函数inner称为闭包函数，**闭包如此强大的原因在于它对作用域链的访问**。
+
 闭包有3个可以访问的作用域：
-1.闭包函数内声明的变量
-2.对全局变量的访问
-3.对外部函数变量的访问！！！！
+
+1. 闭包函数内声明的变量
+2. 对全局变量的访问
+3. 对外部函数变量的访问！！！！
+
+```js
 let global = 'global';//2
 function outer(){
     let outer = 'outer';
@@ -317,8 +377,10 @@ function outer(){
     return inner
 }
 outer()()//"outer"
+```
+#### 4.1.2 闭包可以记住它的上下文
 
-4.1.2 闭包可以记住它的上下文
+```js
 var fn = (arg)=>{
     let outer = 'outer';
     let innerFn = () =>{
@@ -329,67 +391,101 @@ var fn = (arg)=>{
 }
 var closeureFn = fn(5)
 closeureFn()//outer 5
+```
 
-当执行var closeureFn = fn(5)时，函数innerFn被返回，js执行引擎视innerFn为一个闭包，并相应的设置了它的作用域。3个作用域层级在innerFn返回时都被设置了。
+当执行`var closeureFn = fn(5)`时，函数innerFn被返回，js执行引擎视innerFn为一个闭包，并相应的设置了它的作用域。3个作用域层级在innerFn返回时都被设置了。
+
 如此，closeureFn()通过作用域链被调用时就记住了arg、outer的值。
+
 我们回到sortBy
+
+```js
 const sortBy = (property)=>{
     return (a,b) => {
         return (a[property]<b[property])?-1:(a[property]>b[property])?1:0
     }
 }
-
+```
 当我们以如下形式调用时
+
+```js
 sortBy('age')
+```
 
 发生下面的事情：
+
 sortBy函数返回了一个接受两个参数的新函数，这个新函数就是一个闭包
+
+```js
 (a,b)=>{/*实现*/}
+```
+
 根据闭包能访问作用域层级的特点，它能在它的上下文中持有property的值，所以它将在合适并且需要的时候使用返回值。
-4.2真实的高阶函数
-4.2.1 once：允许只运行一次给定的函数
+
+### 4.2真实的高阶函数
+
+#### 4.2.1 once：允许只运行一次给定的函数
+
 这在开发过程中很常见，例如只想设置一次第三方库，初始化一次支付设置。
+
+```js
 const once = (fn)=>{
     let done = false;
     return function(){
         return done?undefined:((done=true),fn.apply(this,arguments))
     }
 }
-
+```
+```js
 var dopayment = once(()=>{console.log("Payment is done")})
 dopayment() //Payment is done
 dopayment() //undefined
+```
 
 js中，(exp1,exp2)的含义是执行两个参数并返回第二个表达式的结果。
-注意：once函数接受一个参数fn并通过调用fn的apply方法返回结果。我们声明了done变量，返回的函数会形成一个覆盖它的闭包作用域，检查done是否为true，如果是则返回undefined，
-否则将done设为true，如此就阻止了下一次的执行。
-4.2.2 memoized
+
+注意：once函数接受一个参数fn并通过调用fn的apply方法返回结果。我们声明了done变量，返回的函数会形成一个覆盖它的闭包作用域，检查done是否为true，如果是则返回undefined，否则将done设为true，如此就阻止了下一次的执行。
+
+#### 4.2.2 memoized
+
 用于为每一个输入存储结果，以便于重用函数中的计算结果。
+
+```js
 const memoized = (fn) => {
     const lookupTable = {};
     return (arg) => lookupTable[arg] || (lookupTable[arg]=fn(arg));
 }
+```
 
 有一个名为lookupTable的局部变量，它在返回函数的闭包上下文中。返回函数将接受一个参数并检查它是否在lookupTable中。
 如果在，就返回对应的值，否则使用新的输入作为key，fn(arg)的结果为value，更新lookupTable对象。
+
 求函数的阶乘（递归法）
+
+```js
 var factorial = (n) => {
     if(n===0){
         return 1;
     }
     return n*factorial(n-1)
 }
+```
 
 现在可以改为把factorial函数包裹进一个memoized函数来保留它的输出（存储结果法）
+
+```js
 let factorial = memoized((n)=>{
     if(n===0){
         return 1;
     }
     return n*factorial(n-1)
 })
+```
 
 它以同样的方式运行，但是比之前快的多。
-第五章：数组的函数式编程
+
+## 第五章：数组的函数式编程
+
 我们使用数组来存储、操作和查找数据，以及转换（投影）数据格式。本章中使用函数式编程来改进这些操作。
 5.1 数组的函数式方法
 本节创建的所有函数称为投影函数，把函数应用于一个值并创建一个新值的过程称为投影。

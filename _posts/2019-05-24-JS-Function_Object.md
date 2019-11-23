@@ -8,7 +8,7 @@ header-img: img/post-bg-javascript.jpg
 catalog: true
 categories: [JavaScript]
 tags:
-  - javascrip
+  - javascript
   - 原型链
 ---
 

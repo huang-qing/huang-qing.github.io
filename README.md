@@ -66,7 +66,7 @@
 
 ## 开发环境配置
 
-安装
+安装:
 
 - `python`
 - `Ruby` [Ruby 使用 Ruby+Devkit 2.4.5-1 (x64)不要安装>2.5 的版本](https://rubyinstaller.org/downloads/)
@@ -92,7 +92,7 @@ https://gems.ruby-china.com
 gem install jekyll bundler
 ```
 
-初始化
+初始化:
 
 ```
 bundle install
