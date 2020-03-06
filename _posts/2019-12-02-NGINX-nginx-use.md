@@ -9,6 +9,7 @@ catalog: true
 categories: [Nginx]
 tags:
   - Nginx
+  - 前端工程化
 ---
 
 ## nginx在应用程序中的作用
