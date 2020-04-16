@@ -223,7 +223,7 @@ browserify src/index.js -t babelify --outfile dist-babelify/index.js
 ```
 
 
-#### 使用gulp
+#### 在gulp中使用gulp-browserify
 
 安装依赖包：
 
@@ -244,7 +244,7 @@ gulp.task('es5', async function () {
     //需要打包的文件入口
     gulp.src('src/dashboard.js', { read: false })
         .pipe(browserify({
-            debug: false,
+            debug: true,
             transform: ["babelify"],
         }))
         .pipe(rename('dashboard.js'))
@@ -253,3 +253,41 @@ gulp.task('es5', async function () {
 
 ```
 
+#### 在gulp中使用browserify
+
+```Shell
+npm install --save-dev browserify vinyl-source-stream vinyl-buffer
+```
+
+```javascript
+var browserify = require('browserify'),  // 插件，实际是node系
+    // 转成stream流，gulp系
+    stream = require('vinyl-source-stream'),
+    // 转成二进制流，gulp系
+    buffer = require('vinyl-buffer');
+    
+gulp.task('browserify', function () {
+    // 定义入口文件
+    return browserify({
+        // 入口必须是转换过的es6文件，且文件不能是es6经过转换的es5文件，否者会报错
+        entries: 'src/dashboard.js',
+        debug: true
+    })
+        // 在bundle之前先转换es6，因为readabel stream 流没有transform方法
+        //.transform("babelify", {presets: ['es2015']})
+        .transform("babelify")
+        // 转成stream流（stream流分小片段传输）
+        .bundle()
+        .on('error', function (error) {
+            console.log(error.toString())
+        })
+        // node系只有content，添加名字转成gulp系可操作的流
+        .pipe(stream('dashboard.js'))
+        // 转成二进制的流（二进制方式整体传输）
+        .pipe(buffer())
+        // 输出
+        .pipe(gulp.dest('build/'))
+```
+
+
+>`source-map`在谷歌浏览器上无效，可以重置浏览器的设置使其生效

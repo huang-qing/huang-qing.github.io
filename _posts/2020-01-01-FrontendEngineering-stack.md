@@ -85,12 +85,25 @@ tags:
   + 包管理工具
     + NPM
     + RubyGems
-  + 自动化构建（开发）
+  + 自动化构建工具
+    + babel ES编译CommonJS规范
+    + browserify
     + webpack
     + gulp
     + grunt
-  + 自动化测试（可发&测试）
-  + 自动化发布
+  + 自动化测试【开发&测试】
+  + 自动化打包【开发环境】
+    + source map
+    + 模块热替换(hot module replacement) HMR
+    + 开发服务器(dev server),自动编译代码,实时重新加载(live reloading)
+    + tree shaking
+  + 自动化打包【发布环境】
+    + tree shaking
+    + 压缩文件
+    + 分离切片（CSS、JS）
+    + 编译代码ES6->ES5
+    + 懒加载
+    + 缓存、版本控制
     + 打包资源
       + 减小打包整体体积
         + 代码压缩
@@ -103,6 +116,7 @@ tags:
         + 动态加载组件
         + 动态加载路由
       + 分包（Bundle Splitting）
+  + MOCK数据
   + 网站部署
     + nginx
       + 解决跨域
@@ -110,5 +124,3 @@ tags:
       + 配置gzip
       + 负载均衡
       + 静态资源服务器
-+ 网站
-  + [CanIUse:](http://caniuse.com/) 前端兼容性自查工具
