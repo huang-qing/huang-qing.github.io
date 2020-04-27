@@ -109,12 +109,12 @@
 
 .side-catalog .catalog-body .h3_nav
 {
-  margin-left:5px;
+  margin-left:10px;
 }
 .side-catalog .catalog-body .h4_nav,
 .side-catalog .catalog-body .h5_nav,
 .side-catalog .catalog-body .h6_nav {
-  margin-left: 10px;
+  margin-left: 15px;
   font-size: 12px;
 }
 .side-catalog .catalog-body .h4_nav a,

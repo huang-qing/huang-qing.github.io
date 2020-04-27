@@ -34,7 +34,7 @@ git --version
 
 ```Shell
 git config --global user.email "[email address]"
-git config --global user.name "[name]"
+git config --global user.name  "[name]"
 git config --global color.ui auto
 ```
 
@@ -127,7 +127,7 @@ git checkout -b [branch-name]
 
 ```
 git checkout [branch-name]
-git merge [branch]
+git merge    [branch]
 ```
 
 `.git/config`
@@ -173,6 +173,7 @@ git remote origin set-url [url]
 git log
 git log --oneline
 git reflog
+```
 
 ```
 git log --follow [file]
