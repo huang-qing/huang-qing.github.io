@@ -9,7 +9,6 @@ catalog: true
 categories: [GitHub]
 tags:
     - Git
-    - vscode
 ---
 
 

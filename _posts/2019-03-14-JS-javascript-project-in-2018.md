@@ -117,6 +117,8 @@ TypeScript 几乎是一个开发标准了：无论对于后端还是前端开发
 
 但是 `Styled Components` 依然有着最好的势头，看起来是最受欢迎的“组件样式化”解决方案。
 
+`SASS`->`BEM`->`CSS Modules`->`Styled Components`
+
 ## 静态网站生成器
 
 和 2017 年一样，`Gatsby` 在 2018 年依然是最受欢迎的静态站点生成器（用于生成一组 HTML JavaScript 和 CSS 文件，以便能够在任意地方托管，超快响应 —— 的一种工具）。

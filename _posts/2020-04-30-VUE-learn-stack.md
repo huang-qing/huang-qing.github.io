@@ -136,6 +136,8 @@ npm install -g @vue/cli
 vue --version
 ```
 
+[vite:针对Vue单页面组件的无打包开发服务器，可以直接在浏览器运行请求的vue文件](https://github.com/vuejs/vite)
+
 自定义配置
 
 vue.config.js

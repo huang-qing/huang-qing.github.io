@@ -11,6 +11,11 @@ tags:
   - Resource
 ---
 
+## 论坛
+
++ [创心-前端技术论坛](http://d2forum.alibaba-inc.com/)
++ [segmentfault](https://segmentfault.com/)
+
 ## 文档
 
 + [Mozilla 开发者文档](https://developer.mozilla.org/zh-CN/docs/Web)，提供了前端（HTML，CSS，Js等）代码参考和学习教程

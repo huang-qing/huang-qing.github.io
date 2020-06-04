@@ -157,3 +157,101 @@ grid-template-areas:
 `这被称为结构和表现分离， Grid(网格) 布局真正做到了这点，对于 CSS 来说是一个巨大的进步`。
 
 它允许 HTML 成为它想要的样子: 作为内容的标记。HTML 结构不再受限于样式表现，比如不要为了实现某种布局而多次嵌套，现在这些都可以让 CSS 来完成。
+
+## [minmax()函数](https://www.w3cplus.com/css3/how-the-minmax-function-works.html)
+
+minmax()六种类型的值：
++ 长度值
++ 百分比值
++ 弹性值
++ max-content
++ min-content
++ auto
+
+
+使用minmax()函数，可以指定网格中黄色单元格宽度保持在100px至200px之间。随着浏览器窗口的大小改变，这绝对值将会改变，但总是在这两个范围之内变化。
+
+### 长度值:
+
+```css
+.grid{
+    display: grid;
+    grid-template-columns: minmax(100px,200px) 1fr 1fr;
+}
+```
+
+### 百分比值:
+
+```css
+.grid{
+    display:grid;
+    grid-template-columns: minmax(200px,50%) 1fr 1fr;
+}
+```
+
+### 弹性长度:
+
+```css
+.grid{
+    display:grid;
+    grid-template-columns: minmax(200px,1fr) 1fr 1fr;
+}
+```
+
+![](/images/css/grid-layout-fr.gif)
+
+
+### max-content
+
+`max-content`关键词是一个特殊的值，它代表了单元格“最理想的大小”。网格单元格最小的宽度围绕它的内容。
+
+```css
+.grid{
+    display:grid;
+    grid-template-columns:minmax(max-content,max-content) 1fr 1fr;
+}
+```
+
+![](/images/css/grid-layout-max-content.gif)
+
+### max-content
+
+`min-content`关键词和`max-content`一样，是一种特殊的值。它代表单元格最小宽度，可以不让内容溢出单元格，除非是不可避免的.
+```css
+.grid{
+    display:grid;
+    grid-template-columns: minmax(min-content,min-content) 1fr 1fr;
+}
+```
+
+![](/images/css/grid-layout-min-content.gif)
+
+### auto
+
+通过`min-width`或`min-height`来指定
+
+```css
+.grid{
+    display: grid;
+    grid-template-columns: minmax(auto,auto) 1fr 1fr;
+}
+```
+
+![](/images/css/grid-layout-auto.gif)
+
+### 不使用媒体查询实现响应式布局
+
+格中的每个列的最小宽度为200px。根据浏览器视窗大小，网格数量会根据共最合理的宽度进行变化。
+
+```css
+.grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+}
+```
+
+![](/images/css/grid-layout-responsive.gif)
+
++ `repeat()`：这个函数允许我们给网格多个列指定相同的值。它也接受两个值：重复的次娄和重复的值
++ `auto-fit`：给repeat()函数使用这个关键词，来替代重复次数。这可以根据每列的宽度灵活的改变网格的列数
+

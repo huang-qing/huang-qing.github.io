@@ -8,7 +8,7 @@ header-img: img/post-bg-micro-frontends.jpg
 catalog: true
 categories: [Micro-Frontends]
 tags:
-  - Micro-Frontends
+  - 微前端
 ---
 
 ## 需求
