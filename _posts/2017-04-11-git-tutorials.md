@@ -21,6 +21,16 @@ tags:
 + [TortoiseGit](https://tortoisegit.org/)
 + [Visual Studio Code](https://code.visualstudio.com/)
 
+
+# 状态模型
+
+![](/images/git/state-model.jpg)
+
++ 工作区 (workspace)
++ 暂存区 (index)
++ 本地仓库 (local repository)
++ 远程仓库 (remote repository)
+
 # Setup and Config
 
 ## git
