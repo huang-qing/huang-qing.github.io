@@ -164,12 +164,12 @@
     "href": "https://github.com/"
   },
   {
-    "title": "Google Chrome",
-    "href": "https://developers.google.com/web/tools/chrome-devtools/"
+    "title": "github desktop",
+    "href": "https://desktop.github.com/"
   },
   {
-    "title": "NPM",
-    "href": "https://www.npmjs.com/"
+    "title": "Google Chrome",
+    "href": "https://developers.google.com/web/tools/chrome-devtools/"
   },
   {
     "title": "VMware",
@@ -233,11 +233,27 @@
   },
   {
     "title": "lodash.js",
-    "href": "https://www.html.cn/doc/lodash/"
+    "href": "https://www.lodashjs.com/"
+  },
+  {
+    "title": "NPM",
+    "href": "https://www.npmjs.com/"
   },
   {
     "title": "淘宝 NPM 镜像",
     "href": "http://npm.taobao.org/"
+  },
+  {
+    "title": "semver",
+    "href": "https://semver.org/lang/zh-CN/"
+  },
+  {
+    "title": "bem",
+    "href": "https://en.bem.info/"
+  },
+  {
+    "title": "yarn",
+    "href": "https://classic.yarnpkg.com/zh-Hans/docs"
   },
   {
     "title": "webpack",
@@ -250,10 +266,6 @@
   {
     "title": "rubyinstaller",
     "href": "https://rubyinstaller.org/"
-  },
-  {
-    "title": "github desktop",
-    "href": "https://desktop.github.com/"
   },
   {
     "title": "three.js",
@@ -298,5 +310,23 @@
   {
     "title": "bestof.js",
     "href": "https://risingstars.js.org"
+  },
+  {
+    "title": "caniuse",
+    "href": "https://www.caniuse.com/"
+  },
+  {
+    "title": "postcss",
+    "href": "https://www.postcss.com.cn/"
+  },
+  {
+    "title": "codepen",
+    "href": "https://codepen.io/"
+  },
+  {
+    "title": "rollupjs",
+    "href": "https://www.rollupjs.com/"
   }
+  
+  
 ]

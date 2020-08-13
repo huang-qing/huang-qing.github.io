@@ -143,18 +143,18 @@ tags:
 
     .wrap:before {
         float: left;
-        /*这个值可以随意设定，不论单位还是什么*/
-        width: 1em;
+        /*使用百分比 与.text margin-left: -50%; 对应*/
+        width: 50%;
         height: 100%;
         content: '';
     }
 
     .wrap:after {
         float: right;
-        /*大小随意，设置em单位最好，可随字体大小变化而自适应*/
+        /*使用百分比 与.text margin-left: -50%; 对应，方便使用left属性偏移定位*/
         /*如果要采用以下渐变效果，那么这个值要大于before里的width值效果会比较好点*/
         /*值越大，渐变的效果越明显影响的范围越大。*/
-        width: 2.5em;
+        width: 50%;
         /*与父元素wrap的行高实际px值一样*/
         height: 25px;
         /*此值要跟自身宽度一样，取负值*/
@@ -167,7 +167,8 @@ tags:
         position: relative;
         /*与父元素wrap的行高实际值一样，取负值*/
         top: -25px;
-        left: 100%;
+        /*使用百分比 与.text margin-left: -50%; 对应*/
+        left: 50%;
         /*设置渐变效果是为了省略号和内容衔接得自然点，没那么突兀，要注意要跟文字所在的背景的颜色搭配（把white替换成背景色）*/
         background: #fff;
         background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(white), color-stop(50%, white));
@@ -179,8 +180,10 @@ tags:
 
     .wrap .text {
         float: right;
-        /*该值要等于wrap:before的width值*/
-        margin-left: -1em;
+        /*该值要等于wrap:before的width值
+         *不要使用em,px等单位，在宽度小于设定的这种固定值时，预期的浮动效果会失效
+        */
+        margin-left: -50%;
         width: 100%;
     }
 </style>

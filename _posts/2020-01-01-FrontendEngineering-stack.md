@@ -110,7 +110,7 @@ tags:
         + 代码压缩
         + 移除不必要的模块`eslint`
         + 按需引入模块：`loadash`、`antd`
-        + 选择可代替的较小模块：`moment.js` -> `day.js`
+        + 选择可代替的较小模块：`moment.js` -> `day.js` ,优化插件 `ContextReplacementPlugin`
       + 按需加载（Code Splitting）
         + 首屏资源优化
         + 动态加载模块
@@ -125,3 +125,6 @@ tags:
       + 配置gzip
       + 负载均衡
       + 静态资源服务器
+
+
+[](/images/front-end-engineering/front-end-platform-workflow.jpg)

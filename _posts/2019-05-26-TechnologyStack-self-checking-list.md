@@ -6,7 +6,7 @@ date:       2019-05-26
 author:     huangqing
 header-img: img/post-bg-technology-stack.jpg
 catalog: true
-categories: [TechnologyStack]
+categories: [Frontend Engineering]
 tags:
     - roadmap
 ---
