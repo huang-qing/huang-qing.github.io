@@ -124,3 +124,13 @@ tags:
 + Flexselect
 + Bselect
 + Zelect
+
+## 2020
+
++ [fullPage.js](https://github.com/alvarotrigo/fullPage.js) 这套开源库能够帮助大家创建全屏滚动网站，如以上 GIF 动图所示。
++ [Anime.js](https://github.com/juliangarnier/anime) Anime.js 是目前最好的动画库之一，拥有出色的灵活性与易用性。
++ [Masonry](https://github.com/desandro/masonry) Masonry 是一套 JavaScript 网格布局库。它能够使用简单的网格元素，并根据可用的垂直空间进行放置，有点像工程师们把石块或砖砼铺设在墙面上的感觉。
++ [slick](https://github.com/kenwheeler/slick/) Slick 拥有全响应式、滑动支持以及无限循环等出色功能。如项目网站首页所述，它能满足用户对于轮播库的所有预期。
++ [Popper.js](https://github.com/popperjs/popper-core) Popper.js 是一套大小约为 3 KB 左右的轻量化 JavaScript 库。这是一款零依赖关系的可靠、可扩展定位引擎，能够保证所有 popper 元素都被放置在正确的位置。
++ [cloc](https://github.com/AlDanial/cloc)`cloc` 看代码行数。需要[strawberryperl](http://strawberryperl.com/)支持
++ [axios](https://github.com/axios/axios) Promise based HTTP client for the browser and node.js

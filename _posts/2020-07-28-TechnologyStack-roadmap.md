@@ -43,7 +43,7 @@ Interactivity Time、Page Speed Index以及Lighthouse Score等。
 
 ### 渐进式Web应用
 
-学习一下service worker以及如何制作渐进式web应用。
+学习一下service worker以及如何制作渐进式web应用（PWA）。
 
 ### 测试
 
