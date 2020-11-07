@@ -46,6 +46,10 @@ nginx现在几乎是众多大型网站的必用技术，大多数情况下，我
 
 >反向代理（Reverse Proxy）方式是指以代理服务器来接受internet上的连接请求，然后将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给internet上请求连接的客户端，此时代理服务器对外就表现为一个反向代理服务器。
 
+当我们有一个服务器集群，并且服务器集群中的每台服务器的内容一样的时候，同样我们要直接从个人电脑访问到服务器集群服务器的时候无法访问，必须通过第三方服务器才能访问集群
+
+这个时候，我们通过第三方服务器访问服务器集群的内容，但是我们并不知道是哪一台服务器提供的内容，此种代理方式称为反向代理
+
 反向代理是`为服务端服务`的，反向代理可以帮助服务器接收来自客户端的请求，帮助服务器做请求转发，负载均衡等。
 
 反向代理对服务端是透明的，对我们是非透明的，即我们并不知道自己访问的是代理服务器，而服务器知道反向代理在为他服务。
@@ -268,33 +272,53 @@ Nginx 在启用了GZip的情况下，不会等文件 GZip 完成再返回响应�
 
 把前面的服务窗口想像成我们的后端服务器，而后面终端的人则是无数个客户端正在发起请求。负载均衡就是用来帮助我们将众多的客户端请求合理的分配到各个服务器，以达到服务端资源的充分利用和更少的请求时间。
 
+公司会建立很多的服务器，这些服务器组成了服务器集群，然后，当用户访问网站的时候，先访问一个中间服务器，再让这个中间服务器在服务器集群中选择一个压力较小的服务器，然后将该访问请求引入选择的服务器
+
+所以，用户每次访问，都会保证服务器集群中的每个服务器压力趋于平衡，分担了服务器压力，避免了服务器崩溃的情况
+
 ### nginx如何实现负载均衡
 
-Upstream指定后端服务器地址列表
+Upstream模块实现负载均衡:
 
-```
-upstream balanceServer {
++ `ip_hash`指令
++ `server`指令
++ `upstream`指令及相关变量
+
+```shell
+# 修改nginx.conf
+
+worker_processes 1;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    # 指定后端服务器地址列表
+    upstream balance_server {
     server 10.1.22.33:12345;
     server 10.1.22.34:12345;
     server 10.1.22.35:12345;
-}
-```
-
-在server中拦截响应请求，并将请求转发到Upstream中配置的服务器列表。
-
-```
-server {
-    server_name  fe.server.com;
-    listen 80;
-    location /api {
-        proxy_pass http://balanceServer;
+    }
+    # 在server中拦截响应请求，并将请求转发到Upstream中配置的服务器列表
+    server {
+        server_name  fe.server.com;
+        listen 80;
+        location / {
+            proxy_pass http://balance_server;
+        }
     }
 }
 ```
 
-上面的配置只是指定了nginx需要转发的服务端列表，并没有指定分配策略。
+1. `worker_processes`:工作进程数，和CPU核数相同
+2. `worker_connections`:每个进程允许的最大连接数
+3. `upstream`模块:负载均衡
+4. `server`模块 : 实现反向代理
 
 ### nginx实现负载均衡的策略
+
+上面的配置只是指定了nginx需要转发的服务端列表，并没有指定分配策略。
 
 #### 轮询策略
 
@@ -366,3 +390,47 @@ location ~* \.(png|gif|jpg|jpeg)$ {
 ```
 
 匹配以`png|gif|jpg|jpeg`为结尾的请求，并将请求转发到本地路径，`root`中指定的路径即nginx本地路径。同时也可以进行一些缓存的设置。
+
+## nginx配置
+
+[download](http://nginx.org/en/download.html)
+
+window 下载解压到安装目录，使用`cmd`跳转到安装目录。
+
+**启动nginx**
+
+```
+nginx
+```
+
+当你敲完nginx，并没有任何反应，此时你只需访问localhost:80(默认)即可
+
+
+**关闭nginx**
+
+```
+nginx -s stop
+```
+
+**重启nginx**
+
+```
+nginx -s reload
+```
+
+每次修改完.conf文件就需要重启nginx;
+
+**检查配置**
+
+检查修改的`nginx.conf`配置是否正确
+
+```
+nginx -t
+```
+
+如果出现下面`ok`和`successfull`就代表正确了，其他的都不对
+
+```
+nginx: the configuration file /usr/local/etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /usr/local/etc/nginx/nginx.conf test is successful
+```

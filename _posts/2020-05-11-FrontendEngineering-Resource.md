@@ -134,3 +134,5 @@ tags:
 + [Popper.js](https://github.com/popperjs/popper-core) Popper.js 是一套大小约为 3 KB 左右的轻量化 JavaScript 库。这是一款零依赖关系的可靠、可扩展定位引擎，能够保证所有 popper 元素都被放置在正确的位置。
 + [cloc](https://github.com/AlDanial/cloc)`cloc` 看代码行数。需要[strawberryperl](http://strawberryperl.com/)支持
 + [axios](https://github.com/axios/axios) Promise based HTTP client for the browser and node.js
++ [YApi](https://github.com/YMFE/yapi) 是一个可本地部署的、打通前后端及QA的、可视化的接口管理平台
++ [typora](https://www.typora.io/) Typora 是一款支持实时预览的 Markdown 文本编辑器。

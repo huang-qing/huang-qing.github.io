@@ -6,9 +6,9 @@ date:       2020-03-09
 author:     huangqing
 header-img: img/post-bg-html.jpg
 catalog: true
-categories: [HTML]
+categories: [HTML5]
 tags:
-    - HTML
+    - HTML5
 ---
 
 ## 基本思路
@@ -85,15 +85,15 @@ ev.target.appendChild(document.getElementById(data));
 
 每一个可拖动的元素，在拖动过程中，都会经历三个过程，`拖动开始`-->`拖动过程中`--> `拖动结束`。
 
-| 针对对象     | 事件名称    | 说明                                                                                             |
-| ------------ | ----------- | ------------------------------------------------------------------------------------------------ |
-| 被拖动的元素 | `dragstart` | 当用户开始拖动对象时触发                                                                         |
-|              | `drag`      | 当对象被拖动，每次移动鼠标时触发                                                                 |
-|              | `dragend`   | 在拖动对象时放开鼠标按键时触发                                                                   |
-|              |             |                                                                                                  |
+| 针对对象     | 事件名称    | 说明  |
+| -------- | ---------- | ------------- |
+| 被拖动的元素 | `dragstart` | 当用户开始拖动对象时触发|
+|            | `drag`      | 当对象被拖动，每次移动鼠标时触发  |
+|            | `dragend`   | 在拖动对象时放开鼠标按键时触发  |
+|            |             |       |
 | 目的地对象   | `dragenter` | 当被拖动元素进入目的地元素所占据的屏幕空间时触发，此事件的监听者应指明在这个位置上是否允许`drop` |
-|              | `dragover`  | 当被拖动元素在目的地元素内时触发                                                                 |
-|              | `dragleave` | 当被拖动元素没有放下就离开目的地元素时触发                                                       |
+|            | `dragover`  | 当被拖动元素在目的地元素内时触发 |
+|            | `dragleave` | 当被拖动元素没有放下就离开目的地元素时触发  |
 
 `dragenter`和`dragover`事件的默认行为是拒绝接受任何被拖放的元素。因此，我们必须阻止浏览器这种默认行为。`e.preventDefault()`;
 
@@ -113,7 +113,8 @@ ev.target.appendChild(document.getElementById(data));
 
 + `dropEffect`：拖放的操作类型，决定了浏览器如何显示鼠标形状，可能的值为`copy`、`move`、`link`和`none`。
 + `effectAllowed`：指定所允许的操作，可能的值为`copy`、`move`、`link`、`copyLink`、`copyMove`、`linkMove`、`all`、`none`和`uninitialized`（默认值，等同于all，即允许一切操作）。
-+ `files`：包含一个`FileList`对象，表示拖放所涉及的文件，主要用于处理从文件系统拖入浏览器的文件。
++ `files`：包含一个`FileList`对象，表示拖放所涉及的文件，主要用于处理从文件系统拖入浏览器的文件。如果拖动操作不涉及拖动文件，则此属性为空列表。
++ `items`: 提供一个包含所有拖动数据列表的 DataTransferItemList 对象
 + `types`：储存在`DataTransfer`对象的数据的类型。
 
 `dataTransfer`对象的方法：

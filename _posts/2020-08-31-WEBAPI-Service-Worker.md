@@ -6,9 +6,9 @@ date:       2020-09-03
 author:     huangqing
 header-img: img/post-bg-html.jpg
 catalog: true
-categories: [HTML]
+categories: [WEB API]
 tags:
-    - HTML
+    - WEB API
 ---
 
 
@@ -164,6 +164,9 @@ self.addEventListener('install', function (event) {
 
 
 ## 请求的响应
+
+
+![](/images/html5/sw-cache-and-network-race.png)
 
 添加`fetch`事件的监听，并通过`event.respondWith`劫持响应：
 
@@ -515,6 +518,11 @@ client先将数据存在indexedDB，待Servcie Worker需要时再从indexedDB读
 ## Push消息推送（国内无法使用）
 
 ![](/images/html5/sw-push.jpg)
+
+在Push中登场的三个重要“角色”分别是：
++ 浏览器：就是我们的客户端
++ Push Service：专门的Push服务，你可以认为是一个第三方服务，目前chrome与firefox都有自己的Push Service Service。理论上只要浏览器支持，可以使用任意的Push Service
++ 后端服务：这里就是指我们自己的后端服务
 
 ### 接收
 

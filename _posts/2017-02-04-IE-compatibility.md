@@ -243,3 +243,11 @@ input {
             document.selection.empty();　　
         };
     ```
+
+## HTML
+
+edge浏览器：
+
+`title`:IE对title的字符数和换行数有限制。
+
+汉字大约570；字母大约400；最多22行

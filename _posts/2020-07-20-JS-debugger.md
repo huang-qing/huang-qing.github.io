@@ -28,7 +28,7 @@ tags:
 
 8. 快速找到调试函数: `debug(funcName)`
 
-9.  美化调试信息:
+9.  美化调试信息:常见的占位符 `%o` (这是字母o，不是0)，它接受对象;`%s` 接受字符串;`%d` 表示小数或整数;`%c`CSS值的占位符。
    ```js
    console.important = function(msg) {
      console.log(‘ % c % s % s % s’, ‘color: brown; font - weight: bold; text - decoration: underline;’, ‘–‘, msg, ‘–‘);
@@ -56,3 +56,9 @@ tags:
 20.  隐藏元素的快捷方式 : 在调试 CSS 样式时，我们通常需要隐藏一个元素。如果选择元素并按下键盘上的H键，我们就可以快速隐藏该元素。
     
 21.  将 DOM 元素存储在全局临时变量中 ： 选择某个元素 - 右键点击鼠标 - 存储为全局变量
+
+22. 查找与DOM中的元素关联的事件: `getEventListeners($('selector'))` 返回一个对象数组，其中包含绑定到该元素的所有事件。
+
+23. 监控事件:在执行绑定到 DOM 中特定元素的事件时监视它们，也可以在控制台中这样做.`monitore($(selector)，[eventName1, eventName3'， .])`
+
+24. 检查 DOM 中的一个元素:`inspect($(‘selector’))` 将检查与选择器匹配的元素，并转到 Chrome Developer Tools中的 Elements 选项卡。

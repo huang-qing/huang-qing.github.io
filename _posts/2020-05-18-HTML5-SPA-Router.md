@@ -6,9 +6,9 @@ date:       2020-05-18
 author:     huangqing
 header-img: img/post-bg-html.jpg
 catalog: true
-categories: [HTML]
+categories: [HTML5]
 tags:
-    - HTML
+    - HTML5
 ---
 
 ## SPA vs MPA
