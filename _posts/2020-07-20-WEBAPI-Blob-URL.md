@@ -36,8 +36,32 @@ function loadFile(fileName, content){
 }
 ```
 
-## 关于Blob
+##  预览图片
 
+```html
+<input id="inputFile" type="file" accept="image/*">
+<img src="" id="previewImage" alt="图片预览">
+<script>
+    const $ = document.getElementById.bind(document);
+    const $inputFile = $('inputFile');
+    const $previewImage = $('previewImage');
+    $inputFile.addEventListener('change', function() {
+        const file = this.files[0];
+        // 使用 URL.createObjectURL
+        $previewImage.src = file ? URL.createObjectURL(file) : '';
+        // 使用 readAsDataURL
+        const reader = new FileReader();
+        reader.addEventListener('load', function() {
+            $previewImage.src = reader.result;
+        }, false);
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }, this);
+</script>
+```
+
+## 关于Blob
 
 
 Blob 对象是一个字节序列。拥有 `size` 和 `type` 等属性。初始化`Blob` 接受的内容类型:
@@ -55,3 +79,5 @@ Blob 对象是一个字节序列。拥有 `size` 和 `type` 等属性。初始�
 
 
 在每次调用 `createObjectURL()` 方法时，都会创建一个新的 URL 对象，即使你已经用相同的对象作为参数创建过。当不再需要这些 URL 对象时，每个对象必须通过调用 `URL.revokeObjectURL()` 方法来释放。浏览器会在文档退出的时候自动释放它们，但是为了获得最佳性能和内存使用状况，你应该在安全的时机主动释放掉它们。
+
+##

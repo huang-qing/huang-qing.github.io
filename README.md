@@ -75,6 +75,7 @@ bundle exec jekyll serve
 - ASP.NET MVC
 - Bootstrap
 - Angular
+- Vue
 - Ionic
 - Cordova
 
@@ -96,6 +97,7 @@ bundle exec jekyll serve
 - NPM
 - Gulp
 - webpack
+- Rollup
 - ngrok
 
 ## Programming 编程方式
@@ -104,6 +106,12 @@ bundle exec jekyll serve
 - Object Oriented Programming 面向对象编程
 - Functional Programming 函数式编程
 - Reactive Programming 响应式编程
+
+## Next
+
+- Node.js  发布一个node.js的插件
+- Electron
+- reids
 
 
 

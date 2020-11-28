@@ -69,6 +69,8 @@ tags:
 
 [实现微前端的十种方式 【第一种】](https://segmentfault.com/a/1190000023100330?utm_source=tag-newest)
 
+[实现微前端的十种方式 【第二种】](https://mp.weixin.qq.com/s?__biz=MzI2NTk2NzUxNg==&mid=2247487404&idx=1&sn=ffe076ae2b180679284ed62dceb4ae8a&chksm=ea940d5fdde3844901783f706752422cb82379d2636e3a941b3d1d303b5aafa83d5303ea68fd&mpshare=1&scene=24&srcid=0708ZbKWaJJHwhqxf0FQBB6n&sharer_sharetime=1594167691544&sharer_shareid=3f8e3a43f78ce137b6d0613608887aa1#rd)
+
 **Vue和React、Jquery共同开发,通信**
 
 ```json

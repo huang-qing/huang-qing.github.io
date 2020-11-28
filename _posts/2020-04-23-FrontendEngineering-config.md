@@ -9,6 +9,8 @@ catalog: true
 categories: [JavaScript]
 tags:
   - javascript
+  - babel
+  - webpack
 ---
 
 

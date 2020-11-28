@@ -10,6 +10,7 @@ categories: [Frontend Engineering]
 tags:
   - 编译
   - 前端工程化
+  - babel
 ---
 
 

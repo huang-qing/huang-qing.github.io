@@ -62,3 +62,5 @@ tags:
 23. 监控事件:在执行绑定到 DOM 中特定元素的事件时监视它们，也可以在控制台中这样做.`monitore($(selector)，[eventName1, eventName3'， .])`
 
 24. 检查 DOM 中的一个元素:`inspect($(‘selector’))` 将检查与选择器匹配的元素，并转到 Chrome Developer Tools中的 Elements 选项卡。
+
+25. 代码调试过程中，在 Local-> 右键 Store as global variable 。开发者工具会自动分配一个名为 temp{n} 的变量，n 基于先前保存的变量的数目。
