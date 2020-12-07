@@ -333,6 +333,46 @@ JSONP 的缺点则是：
 
 #### 例子
 
+```js
+// 封装 jsonp 跨域请求的方法
+function jsonp({ url, params, cb }) {
+    return new Promise((resolve, reject) => {
+        // 创建一个 script 标签帮助我们发送请求
+        let script = document.createElement("script");
+        let arr = [];
+        params = { ...params, cb };
+
+        // 循环构建键值对形式的参数
+        for (let key in params) {
+            arr.push(`${key}=${params[key]}`);
+        }
+
+        // 创建全局函数
+        window[cb] = function(data) {
+            resolve(data);
+            // 在跨域拿到数据以后将 script 标签销毁
+            document.body.removeChild(script);
+        };
+
+        // 拼接发送请求的参数并赋值到 src 属性
+        script.src = `${url}?${arr.join("&")}`;
+        document.body.appendChild(script);
+    });
+}
+
+// 调用方法跨域请求百度搜索的接口
+json({
+    url: "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su",
+    params: {
+        wd: "jsonp"
+    },
+    cb: "show"
+}).then(data => {
+    // 打印请求回的数据
+    console.log(data);
+})
+```
+
 ```javascript
 function handleResponse(response) {
   console.log("The responsed data is: " + response.data);
@@ -378,7 +418,7 @@ Jquery:
 
 jquery 会自动生成一个全局函数来替换 callback=?中的问号，之后获取到数据后又会自动销毁，实际上就是起一个临时代理函数的作用。
 
-\$.getJSON 方法会自动判断是否跨域，不跨域的话，就调用普通的 ajax 方法；
+`$.getJSON` 方法会自动判断是否跨域，不跨域的话，就调用普通的 ajax 方法；
 跨域的话，则会以异步加载 js 文件的形式来调用 jsonp 的回调函数。
 
 ```javascript
@@ -731,7 +771,7 @@ console.log('Server is running at port 8080...');
 
 ## `Nodejs`中间件代理跨域
 
-node 中间件实现跨域代理，原理大致与 nginx 相同，都是通过启一个代理服务器，实现数据的转发。
+NodeJS 中间件 `http-proxy-middleware` 实现跨域代理，原理大致与 nginx 相同，都是通过启一个代理服务器，实现数据的转发。
 
 实现原理：同源策略是浏览器需要遵循的标准，而如果是服务器向服务器请求就无需遵循同源策略。
 代理服务器，需要做以下几个步骤：

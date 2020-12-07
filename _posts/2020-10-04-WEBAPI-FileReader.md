@@ -40,10 +40,10 @@ tags:
 ## 方法
 
 `FileReader.abort()` : 中止读取操作。在返回时，`readyState`属性为`DONE`。
-`FileReader.readAsArrayBuffer()` : 开始读取指定的 `Blob`中的内容, 一旦完成, `result` 属性中保存的将是被读取文件的 `ArrayBuffer` 数据对象.
-`FileReader.readAsBinaryString()`  : 开始读取指定的`Blob`中的内容。一旦完成，`result`属性中将包含所读取文件的原始二进制数据。
-`FileReader.readAsDataURL()` : 开始读取指定的`Blob`中的内容。一旦完成，`result`属性中将包含一个`data: URL`格式的`Base64`字符串以表示所读取文件的内容。
-`FileReader.readAsText()`: 开始读取指定的`Blob`中的内容。一旦完成，`result`属性中将包含一个字符串以表示所读取的文件内容。（可以读取txt的文本信息,实际上读的是文件类型为`text/*`的文件的信息）
+`FileReader.readAsArrayBuffer()` : 异步按字节读取文件内容，结果用 ArrayBuffer 对象表示.
+`FileReader.readAsBinaryString()`  : 异步按字节读取文件内容，结果为文件的二进制串
+`FileReader.readAsDataURL()` : 异步读取文件内容，结果为`data: URL`格式的`Base64`字符串以表示所读取文件的内容。
+`FileReader.readAsText()`: 异步按字符读取文件内容，结果用字符串形式表示。（可以读取txt的文本信息,实际上读的是文件类型为`text/*`的文件的信息）
 
 ## 示例
 

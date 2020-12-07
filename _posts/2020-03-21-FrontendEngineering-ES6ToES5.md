@@ -18,7 +18,13 @@ tags:
 
 babel的目的就是为了解决浏览器的自身对于es语言的差异性而带来的一款工具，有了babel就不用担心浏览器不支持es语言这件事。
 
+babel 编译的阶段: babel 总共分为三个阶段：解析，转换，生成。
+
+![babel-abstract-syntax-tree](/images/babel/babel-abstract-syntax-tree.jpg)
+
 [babel7](https://babel.docschina.org)的各个组成部分：
+
+![](/images/babel/babel-module.jpg)
 
 + @babel/cli
 + @babel/core
