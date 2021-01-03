@@ -135,4 +135,4 @@ tags:
 + [cloc](https://github.com/AlDanial/cloc)`cloc` 看代码行数。需要[strawberryperl](http://strawberryperl.com/)支持
 + [axios](https://github.com/axios/axios) Promise based HTTP client for the browser and node.js
 + [YApi](https://github.com/YMFE/yapi) 是一个可本地部署的、打通前后端及QA的、可视化的接口管理平台
-+ [typora](https://www.typora.io/) Typora 是一款支持实时预览的 Markdown 文本编辑器。
++ [typora](https://www.typora.io/) Typora 是一款支持实时预览的 Markdown 文本编辑器。可导出doc,pdf文档。
