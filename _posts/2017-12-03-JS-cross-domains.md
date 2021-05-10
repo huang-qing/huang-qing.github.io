@@ -865,3 +865,12 @@ module.exports = {
 •不管是 Node 中间件代理还是 nginx 反向代理，主要是通过同源策略对服务器不加限制。
 
 •日常工作中，用得比较多的跨域方案是 cors 和 nginx 反向代理
+
+
+## 参考
+
++ [Will it CORS?](https://httptoolkit.tech/will-it-cors/) 这个出色的工具会询问你要做什么，然后告诉你正确的 CORS 响应标头。
++ [Simple requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#Simple_requests) 和 [Preflighted requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#Preflighted_requests) 是 Mozilla 开发网络上的 CORS 文档，它们对不同类型的 CORS 请求给出了很好的解释
++ [CORS HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#CORS) 是一个方便的参考，列出了你可以使用的所有 CORS 标头
++ [Path of an XMLHttpRequest(XHR) through CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing#/media/File:Flowchart_showing_Simple_and_Preflight_XHR.svg) 这份流程图是很有用的可视工具，有助于理解何时将 CORS 请求视为“复杂”
++ [Fetch standard: HTTP extensions](https://fetch.spec.whatwg.org/#http-extensions) 这份文档涵盖了如何在浏览器 Fetch API 中实现 CORS 的详细信息

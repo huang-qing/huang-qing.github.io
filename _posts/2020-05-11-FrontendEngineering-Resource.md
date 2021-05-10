@@ -46,6 +46,7 @@ tags:
 + [jasmine](https://github.com/jasmine/jasmine)：简单无 DOM 的 JavaScript 测试框架。
 + [qunit](https://github.com/jquery/qunit)：一个易于使用的 JavaScript 单元测试框架。
 + [jest](https://github.com/facebook/jest)：简单的 JavaScript 单元测试框架。
++ [mocha](https://mochajs.cn/) : mocha是一个功能丰富的javascript测试框架，运行在node.js和浏览器中，使异步测试变得简单有趣。
 
 ### 断言
 

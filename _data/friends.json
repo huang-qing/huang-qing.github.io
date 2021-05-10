@@ -116,10 +116,6 @@
     "href": "https://www.w3.org/html/ig/zh/wiki/Css3-flexbox/zh-hans"
   },
   {
-    "title": "React",
-    "href": "https://facebook.github.io/react/"
-  },
-  {
     "title": "Font Awesome",
     "href": "http://fontawesome.io/"
   },
@@ -138,6 +134,14 @@
   {
     "title": "Markdown",
     "href": "http://www.markdown.cn/"
+  },
+  {
+    "title": "pandoc",
+    "href": "  https://www.pandoc.org/"
+  },
+  {
+    "title": "typora",
+    "href": "https://www.typora.io/"
   },
   {
     "title": "Visual Studio 2017",
@@ -188,6 +192,10 @@
     "href": "https://www.asp.net/web-forms"
   },
   {
+    "title": "React",
+    "href": "https://facebook.github.io/react/"
+  },
+  {
     "title": "Angular",
     "href": "https://angular.cn/"
   },
@@ -210,6 +218,10 @@
   {
     "title": "jQuery",
     "href": "http://jquery.com/"
+  },
+  {
+    "title": "zeptojs",
+    "href": "https://zeptojs.com/"
   },
   {
     "title": "Raphaël",
@@ -276,6 +288,10 @@
     "href": "https://nodejs.org/zh-cn/"
   },
   {
+    "title": "koa",
+    "href": "https://koa.bootcss.com/"
+  },
+  {
     "title": "Eslint",
     "href": "http://eslint.cn/docs/user-guide/configuring"
   },
@@ -312,10 +328,6 @@
     "href": "https://risingstars.js.org"
   },
   {
-    "title": "caniuse",
-    "href": "https://www.caniuse.com/"
-  },
-  {
     "title": "postcss",
     "href": "https://www.postcss.com.cn/"
   },
@@ -332,8 +344,16 @@
     "href": "https://www.diagrams.net/"
   },
   {
-    "title": "typora",
-    "href": "https://www.typora.io/"
+    "title": "caniuse",
+    "href": "https://www.caniuse.com/"
+  },
+  {
+    "title": "百度指数",
+    "href": "http://index.baidu.com/"
+  },
+  {
+    "title": "google指数",
+    "href": "https://trends.google.com/"
   }
-
+  
 ]

@@ -101,3 +101,99 @@ git hooks分为客户端hook和服务端hook。
 git hook不光可以用来做规范限制，它还可以做更多有意义的事情。
 
 一次git commit提交的信息量很大，有作者信息、代码库信息、commit等信息。我们的监控服务就根据作者信息做了git commit的统计，这样不仅可以用来监控commit message的规范性，也可以用来监控大家的工作情况。我们也可以把git commit和相关的bug关联起来，我们查看bug时就可以查看解决这个bug的代码修改，很有利于相关问题的追溯。当然我们用同样的方法也可以把git commit和相关的需求关联起来，比如我们定义一种格式feat *786990（需求的ID），然后在git commit的时候按照这种格式提交，webhook就可以根据这种格式把需求和git commit进行关联，也可以用来追溯某个需求的代码量，当然这个例子不一定合适，但足以证明git hook功能之强大，可以给我们的流程规范带来很大的便利。
+
+
+## 利用 `commitizen` 和 `husky` 来规范代码库的 commit
+
+
+安装以下依赖:
+
+```
+npm install commitizen -g
+
+npm install @commitlint/cli @commitlint/config-conventional husky  -D
+```
+
+
+`husky` 是 `git hook` 工具，使用 `husky`，我们可以方便的在 `package.json` 中配置 `git hook` 脚本，例如: `pre-commit`、 `pre-push`、 `commit-msg` 等的。
+
+在 package.json 中增加 husky 字段
+```json
+{
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    },
+}
+```
+
+创建 `commitlint.config.js` 文件
+
+```js
+module.exports = {
+    extends: ["@commitlint/config-conventional"],
+};
+```
+
+使用 `git cz` 来替代 `git commit` 提交信息
+
+git cz 的 `type` 说明：
+
+|值|描述|
+|----|----|
+|feat| 新增一个功能|
+|fix|修复一个Bug|
+|docs|文档变更|
+|style|代码格式（不影响功能，如空格、分号等格式修正）|
+|refactor|代码重构|
+|perf|改善性能|
+|test|测试|
+|build|变更项目构建或外部依赖（例如：scopes：webpack、gulp、npm）|
+|ci|更改持续集成软件的配置文件和package中的script命令，如scope:Travis,Circle|
+|chore|变更构建流程或辅助工具|
+|revert|代码回退|
+
+代码提交前检查：
+
+```
+npm install lint-staged -D
+```
+
+使用 `pre-commit` 的 `hook`
+
+```json
+"husky": {
+    "hooks": {
+        "pre-commit": "lint-staged"
+    }
+},
+"lint-staged": {
+    "**/*.js": [
+        "prettier --write", 
+        "eslint"
+    ]
+}
+```
+
+`eslint` 和 `prettier` 配置:
+
+```
+npm install eslint eslint-config-prettier eslint-plugin-promise eslint-plugin-react eslint-plugin-react-hooks prettier babel-eslint -D
+```
+
+**.prettierrc.js**
+
+```js
+module.exports = {
+  printWidth: 100, //长度超过100断行
+  singleQuote: true,//使用单引号
+};
+```  
+
+**.eslintrc.js**
+
+
+## 
+
++ [花十分钟的时间武装你的代码库](https://mp.weixin.qq.com/s?__biz=MzA5NzkwNDk3MQ==&mid=2650593151&idx=1&sn=cf04bc7949ead9120237e4afe7b06a96&chksm=8891c75bbfe64e4d010f4a04a49237b051fe0af3288565b12da904de5872e8c2041710c034b3&mpshare=1&scene=24&srcid=0822wp8yhwxJ9lGz2X2tW0n2&sharer_sharetime=1598091214457&sharer_shareid=3f8e3a43f78ce137b6d0613608887aa1#rd)

@@ -214,4 +214,3 @@ SPA有如下缺点：
 + forever * pm2     // nodejs项目部署工具
 + karma & mocha & PhantomJS      //自动化测试框架
 + ……
-

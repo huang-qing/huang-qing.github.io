@@ -98,3 +98,8 @@ Lighthouse的工作流程有几个主要的步骤。部分步骤发生在浏览�
 ## 结论
 
 辅助功能和PWA成为了现代web开发的主要衡量标准。很多公司投入时间和金钱来改善他们的网页。Lighthouse 在DevTool中的整合是可行的。它有助于Web开发人员变得更专业，还会提高网页的质量。我确信将来我们会在Audits标签中花很多时间，然后在一些热门的网站上运行它，还会有更多的人也会这么做。
+
+
+## 更新2020
+
++ [Chrome DevTools 近半年新增了哪些功能](https://mp.weixin.qq.com/s?__biz=MzA4Nzg0MDM5Nw==&mid=2247484453&amp;idx=1&amp;sn=e1978a119bd2af33579e403c5c6ad983&source=41#wechat_redirect) [原文](https://developers.google.com/web/updates/2019/09/devtools)
