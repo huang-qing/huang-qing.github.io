@@ -4,11 +4,12 @@ title: monorepo
 subtitle: 使用 lerna 和 yarn 构建 monorepo 项目
 date: 2021-05-10
 author: huangqing
-header-img: img/post-bg-yarn.jpeg
+header-img: img/post-bg-frontend.jpg
 catalog: true
 categories: [Frontend Engineering]
 tags:
   - 前端工程化
+  - monorepo
 ---
 
 使用 `lerna` 和 `yarn` 构建 `monorepo` 项目，核心思想是 用 `yarn` 来处理依赖问题，用 `lerna` 来处理发布问题。
@@ -32,7 +33,17 @@ Monorepo(monolithic repository) 是管理项目代码的一个方式，指在一
 ```
 
 monorepo 最主要的好处是统一的工作流和 Code Sharing。比如我想看一个 pacakge 的代码、了解某段逻辑，不需要找它的 repo，直接就在当前 repo；当某个需求要修改多个 pacakge 时，不需要分别到各自的 repo 进行修改、测试、发版或者 npm link，直接在当前 repo 修改，统一测试、统一发版。只要搭建一套脚手架，就能管理（构建、测试、发布）多个 package。
-但是 repo 的体积较大。因为各个 package 理论上都是独立的，所以每个 package 都维护着自己的 dependencies，而很大的可能性，package 之间有不少相同的依赖，而这就可能使 install 时出现重复安装。目前最常见的 monorepo 解决方案是 `Lerna` 和 `yarn` 的 `workspaces` 特性。
+但是 repo 的体积较大。因为各个 package 理论上都是独立的，所以每个 package 都维护着自己的 dependencies，而很大的可能性，package 之间有不少相同的依赖，而这就可能使 install 时出现重复安装。
+
+实际开发中的场景，「Monorepo」的使用通常是通过 `yarn` 的 `workspaces` 工作空间，又或者是 `lerna` 这种第三方工具库来实现。使用「Monorepo」的方式来管理项目会给我们带来以下这些好处：
+
++ 只需要一个仓库，就可以便捷地管理多个项目。
++ 可以管理不同项目中的相同第三方依赖，做到依赖的同步更新。
++ 可以使用其他项目中的代码，清晰地建立起项目间的依赖关系。
+
+「Vue3」正是采用的 yarn 的 workspaces 工作空间的方式管理整个项目:
+
+![vue2 monorepo](/images/monorepo/vue3-monorepo.png)
 
 ## Yarn Workspace
 
@@ -173,7 +184,7 @@ yarn remove -W commitizen
 
 由于他们使用了相同的技术栈，那么 `eslint` 、 `prettier` ，甚至 `webpack` 配置都可以提取到最外面，不用维护在每个项目里面。
 
-以 create-react-app eject 之后的配置为例：
+以 create-react-app peject 之后的配置为例：
 
 ```
 - node_modules
@@ -204,3 +215,8 @@ yarn remove -W commitizen
 ```
 
 我们可以看到，通用配置都被提取到了最外层。
+
+## 参考资料
+
+- [Monorepo 实战](https://www.jianshu.com/p/dafc2052eedc)
+- [Yarn Workspace 的简单使用](https://www.yuque.com/negivup/blog/nyw4yx)

@@ -4,9 +4,9 @@ title: Mock
 subtitle:
 date: 2021-04-12
 author: huangqing
-header-img: img/post-bg-vue.png
+header-img: img/post-bg-frontend.jpg
 catalog: true
-categories: [Vue3]
+categories: [Frontend Engineering]
 tags:
   - mock
   - Vue3
@@ -45,6 +45,8 @@ Mock 经常使用的 API:
 | `type`     | 可选                        | 拦截 Ajax 类型 | GET、POST、PUT、DELETE |
 | `template` | 可选: 可以是对象或字符串    | 生成数据的模板 | `{'data                | 1-10':['mock'] }` `@EMAIL` |
 
+[mockjs examples](http://mockjs.com/examples.html)
+
 生成模拟数据：
 
 ```js
@@ -66,6 +68,34 @@ console.log(JSON.stringify(data, null, 4));
 
 //类型2: Mock自带模板
 Mock.mock("@province");
+```
+
+根据参数创建数据:
+
+```js
+function createTableMock(key?: string) {
+  let nameList = ["Jon", "Edrward", "God", "HQ", "LJY", "ZLJ", "ZNN", "LLL"];
+  if (key) {
+    nameList = [key];
+  }
+  return Mock.mock({
+    "rows|10-20": [
+      {
+        "key|+1": 1,
+        "age|1-100": 1,
+        "name|1": nameList,
+        "address|1": [
+          Mock.mock("@county(true)"),
+          Mock.mock("@county(true)"),
+          Mock.mock("@county(true)"),
+          Mock.mock("@county(true)"),
+          Mock.mock("@county(true)"),
+          Mock.mock("@county(true)"),
+        ],
+      },
+    ],
+  });
+}
 ```
 
 ajax 拦截器：

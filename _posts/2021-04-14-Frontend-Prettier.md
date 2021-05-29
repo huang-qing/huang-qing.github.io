@@ -260,6 +260,8 @@ Current default:
 
 ### .gitattributes
 
+当执行 git 动作时，`.gitattributes` 文件允许你指定由 git 使用的文件和路径的属性，例如：git commit 等。换句话说，每当有文件保存或者创建时，git 会根据指定的属性来自动地保存。其中的一个属性是 `eol`(end of line)，用于配置文件的结尾。
+
 ```
 *.js    eol=lf
 *.ts    eol=lf
@@ -269,6 +271,15 @@ Current default:
 *.less    eol=lf
 *.vue   eol=lf
 ```
+
+重置 `GitAttributes`
+
+```bash
+git rm --cached -r
+git reset --hard
+```
+
+上面的命令就会根据文件 `.gitattributes` 中的定义，更新文件的结尾行。任何变更都会自动使用指定文件的文件结尾行格式。
 
 ## vscode
 

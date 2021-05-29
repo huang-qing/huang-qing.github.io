@@ -6,7 +6,7 @@ date: 2020-04-23
 author: huangqing
 header-img: img/post-bg-javascript.gif
 catalog: true
-categories: [JavaScript]
+categories: [Frontend Engineering]
 tags:
   - javascript
   - babel
