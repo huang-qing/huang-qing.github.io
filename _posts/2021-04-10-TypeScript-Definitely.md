@@ -1,7 +1,7 @@
 ---
 layout: post
 title: TypeScript 声明文件
-subtitle:
+subtitle: xx.d.ts
 date: 2021-04-10
 author: huangqing
 header-img: img/post-bg-typescript.jpg

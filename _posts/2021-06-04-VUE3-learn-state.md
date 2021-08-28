@@ -2,7 +2,7 @@
 layout:     post
 title:      Learn Vue - State
 subtitle:   状态管理
-date:       2019-09-26
+date:       2021-06-04
 author:     huangqing
 header-img: img/post-bg-vue.png
 catalog: true
@@ -11,7 +11,7 @@ tags:
     - Vue   
 ---
 
-#### 简单状态管理
+## 简单状态管理
 
 简单的store模式:
 
@@ -57,7 +57,7 @@ var vmB = new Vue({
 
 组件不允许直接修改属于 store 实例的 state，而应执行 action 来分发 (dispatch) 事件通知 store 去改变，我们最终达成了 Flux 架构。
 
-## Vuex
+## [Vuex](https://next.vuex.vuejs.org/zh/)
 
 ![](/images/vue/vuex.png)
 
@@ -86,3 +86,75 @@ const app = new Vue({
 ```
 
 通过在根实例中注册 `store` 选项，该 `store` 实例会注入到根组件下的所有子组件中，且子组件能通过 `this.$store` 访问到。
+
+### 核心内容
+
+成员列表：
+
++ `state` 存放状态
++ `mutations` state成员操作
++ `getters` 加工state成员给外界
++ `actions` 异步操作
++ `modules` 模块化状态管理
+
+
+### [项目结构](https://next.vuex.vuejs.org/zh/guide/structure.html)
+
+Vuex 并不限制你的代码结构。但是，它规定了一些需要遵守的规则：
+
+1. 应用层级的状态应该集中到单个 `store` 对象中。
+
+2. 提交 `mutation` 是更改状态的唯一方法，并且这个过程是同步的。
+
+3. 异步逻辑都应该封装到 `action` 里面。
+
+只要你遵守以上规则，如何组织代码随你便。如果你的 `store` 文件太大，只需将 `action`、`mutation` 和 `getter` 分割到单独的文件。
+
+对于大型应用，我们会希望把 Vuex 相关代码分割到模块中。下面是项目结构示例：
+
+```
+├── index.html
+├── main.js
+├── api
+│   └── ... # 抽取出API请求
+├── components
+│   ├── App.vue
+│   └── ...
+└── store
+    ├── index.js          # 我们组装模块并导出 store 的地方
+    ├── actions.js        # 根级别的 action
+    ├── mutations.js      # 根级别的 mutation
+    └── modules
+        ├── cart.js       # 购物车模块
+        └── products.js   # 产品模块
+```
+
+
+### [Module](https://next.vuex.vuejs.org/zh/guide/modules.html)
+
+Vuex 允许我们将 store 分割成模块（module）。每个模块拥有自己的 state、mutation、action、getter、甚至是嵌套子模块——从上至下进行同样方式的分割：
+
+```JS
+const moduleA = {
+  state: () => ({ ... }),
+  mutations: { ... },
+  actions: { ... },
+  getters: { ... }
+}
+
+const moduleB = {
+  state: () => ({ ... }),
+  mutations: { ... },
+  actions: { ... }
+}
+
+const store = createStore({
+  modules: {
+    a: moduleA,
+    b: moduleB
+  }
+})
+
+store.state.a // -> moduleA 的状态
+store.state.b // -> moduleB 的状态
+```
