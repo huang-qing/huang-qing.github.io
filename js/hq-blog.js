@@ -6,7 +6,7 @@
 
 /*!
  * HuangQing Blog v1.6.0 (http://startbootstrap.com)
- * Copyright 2016 @huxpro
+ * Copyright 2016 @hqpro
  * Licensed under Apache 2.0
  */
 
