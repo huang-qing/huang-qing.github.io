@@ -38,3 +38,9 @@ _site
 
 node_modules
 debug.log
+
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
