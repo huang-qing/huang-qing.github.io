@@ -11,6 +11,12 @@ tags:
   - Vite
 ---
 
+## webpack vs vite
+
+底层实现上， Vite 是基于 esbuild 预构建依赖的。
+
+esbuild 使用 go 编写，并且比以 js 编写的打包器预构建依赖, 快 10 - 100 倍。
+
 ## webpack
 
 webpack打包过程:
@@ -28,7 +34,8 @@ webpack打包原理:
 4. 把AST抽象语法树变成浏览器可以识别的代码， 然后输出
 
 ![](/images/vite/webpack-bundle-based-dev-server.jpg)
-![](/images/viete/webpack-server.png)
+![](/images/vite/webpack-init.jpg)
+![](/images/vite/webpack-server.png)
 ## vite
 
 当声明一个 `script` 标签类型为 `module` 时,浏览器就会像服务器发起一个`GET`。
@@ -38,7 +45,7 @@ webpack打包原理:
 Vite 的主要功能就是通过劫持浏览器的这些请求，并在后端进行相应的处理将项目中使用的文件通过简单的分解与整合，然后再返回给浏览器，vite整个过程中没有对文件进行打包编译，所以其运行速度比原始的webpack开发编译速度快出许多
 
 ![](/images/vite/vite-native-esm-based-dev-server.jpg)
-
+![](/images/vite/vite-init.jpg)
 ![](/images/vite/vite-server.png)
 
 
@@ -222,3 +229,4 @@ export default defineComponent({
 + [vite2.0+vue3移动端项目实战](https://mp.weixin.qq.com/s?__biz=MzA4Nzg0MDM5Nw==&mid=2247492764&idx=1&sn=479aed0aace0868377081d1537f53a49&chksm=9031e77ea7466e6852084bafbb047f7c22edf4e5f13e3763da1e00eb101cdcb9a0e050866a09&mpshare=1&scene=24&srcid=0228pfWDyMbKyUv2iVQO9ppi&sharer_sharetime=1614491261067&sharer_shareid=3f8e3a43f78ce137b6d0613608887aa1#rd)
 + [前端新玩具：Vite 及相关思考](https://zhuanlan.zhihu.com/p/268877593)
 + [前端新工具--vite从入门到实战（一）](https://zhuanlan.zhihu.com/p/149033579)
++ [项目升级到Vite踩的坑都在这了！](https://mp.weixin.qq.com/s?__biz=MzkwODIwMDY2OQ==&mid=2247489471&idx=1&sn=1966d911c3798e4a55b7e023449d12c7&chksm=c0ccc80df7bb411b51a617060ab7d4b091636c84b4f7185df47fef592b15ce19abf1fa9f0ef9&mpshare=1&scene=24&srcid=0418cv0kTcJr0Z9EeqcvkxOy&sharer_sharetime=1618713237012&sharer_shareid=3f8e3a43f78ce137b6d0613608887aa1#rd)

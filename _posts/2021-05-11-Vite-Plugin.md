@@ -19,7 +19,6 @@ tags:
 
 ![](/images/vite/vite-devServer.png)
 
-
 ## Vite插件的形式
 
 Vite插件扩展自Rollup插件接口，只是额外多了一些Vite特有选项。
@@ -69,6 +68,7 @@ export default function myPlugin(options) {
 ```
 
 这使得可以在 JavaScript 中引入这些文件：
+
 ```js
 import { msg } from '@my-virtual-file'
 
@@ -187,10 +187,10 @@ const htmlPlugin = () => {
 + 带有 `enforce: 'post'` 的用户插件
 + Vite 后置构建插件(minify, manifest, reporting)
 
-![](/images/vite/vite-plugin-sort.png)
+![vite-plugin-sort](/images/vite/vite-plugin-sort.png)
 
-
-- [Vite 插件 API](https://cn.vitejs.dev/guide/api-plugin.html#transforming-custom-file-types)
-- [精通Vite2之插件开发指南](https://juejin.cn/post/6950217775663513608)
-- [如何编写一个 Vite 插件](https://juejin.cn/post/6876812524338216973)
-- [代码地址](https://github.com/ImpactBox/vite-plugin-auto-routes)
++ [Vite 插件 API](https://cn.vitejs.dev/guide/api-plugin.html#transforming-custom-file-types)
++ [精通Vite2之插件开发指南](https://juejin.cn/post/6950217775663513608)
++ [如何编写一个 Vite 插件](https://juejin.cn/post/6876812524338216973)
++ [代码地址](https://github.com/ImpactBox/vite-plugin-auto-routes)
++ [通过 Vite 插件实现基于文件目录的路由](https://mp.weixin.qq.com/s?__biz=MzI3NTM5NDgzOA==&mid=2247497061&idx=3&sn=8c30bd9271d95f9bd3db9d1ea11fbe05&chksm=eb07cd1cdc70440a440d99f4ddb39e03fdd623953eb430ceda2692daddc703d07ed6240c9b38&mpshare=1&scene=24&srcid=0604V4iaWziOYA422bfdhZby&sharer_sharetime=1622820454628&sharer_shareid=3f8e3a43f78ce137b6d0613608887aa1#rd)
