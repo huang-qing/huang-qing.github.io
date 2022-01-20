@@ -1,38 +1,36 @@
 ---
-layout:     post
-title:      nvm
-subtitle:   Node.js 版本管理工具
-date:       2020-08-28
-author:     huangqing
+layout: post
+title: nvm
+subtitle: Node.js 版本管理工具
+date: 2021-08-28
+author: huangqing
 header-img: img/post-bg-nodejs.png
 catalog: true
 categories: [Nodejs]
 tags:
-    - nodejs
+  - nodejs
 ---
 
+## nvm 是什么
 
-## nvm是什么
-
-`nvm`全名node.js version management，顾名思义是一个nodejs的版本管理工具。通过它可以安装和切换不同版本的nodejs。下面列出下载、安装及使用方法。
+`nvm`全名 node.js version management，顾名思义是一个 nodejs 的版本管理工具。通过它可以安装和切换不同版本的 nodejs。下面列出下载、安装及使用方法。
 
 ## 下载
 
-可在点此在[github](https://github.com/coreybutler/nvm-windows/releases)上下载最新版本,本次下载安装的是windows版本。打开网址我们可以看到有两个版本：
+可在点此在[github](https://github.com/coreybutler/nvm-windows/releases)上下载最新版本,本次下载安装的是 windows 版本。打开网址我们可以看到有两个版本：
 
-+ nvm-noinstall.zip：绿色免安装版，但使用时需进行配置。
-+ nvm-setup.zip：安装版，推荐使用
-
+- nvm-noinstall.zip：绿色免安装版，但使用时需进行配置。
+- nvm-setup.zip：安装版，推荐使用
 
 ## 安装
 
-> 首先卸载系统中的nodejs
+> 首先卸载系统中的 nodejs
 
 window:
 
 1. 双击安装文件 nvm-setup.exe
-2. 选择nvm安装路径
-3. 选择nodejs路径
+2. 选择 nvm 安装路径
+3. 选择 nodejs 路径
 4. 确认安装即可
 5. 安装完确认
 
@@ -42,13 +40,13 @@ nvm
 Running version 1.1.8.
 
 Usage:
- 
-  nvm arch                     : Show if node is running in 32 or 64 bit mode. 
+
+  nvm arch                     : Show if node is running in 32 or 64 bit mode.
                                  显示node是运行在32位还是64位。
 
-  nvm current                  : Display active version. 
+  nvm current                  : Display active version.
 
-  nvm install <version> [arch] : The version can be a specific version, "latest" for the latest current version, or "lts" for the 
+  nvm install <version> [arch] : The version can be a specific version, "latest" for the latest current version, or "lts" for the
                                  most recent LTS version. Optionally specify whether to install the 32 or 64 bit version (defaults
                                  to system arch). Set [arch] to "all" to install 32 AND 64 bit versions.
                                  Add --insecure to the end of this command to bypass SSL validation of the remote download server.
@@ -84,12 +82,12 @@ Usage:
   nvm root [path]              : Set the directory where nvm should store different versions of node.js.
                                  If <path> is not set, the current root will be displayed.
                                  设置存储不同版本node的目录。如果未设置，默认使用当前目录。
-                                 
+
   nvm version                  : Displays the current running version of nvm for Windows. Aliased as v.
                                  显示nvm版本。version可简化为v。
 ```
 
-## 安装/管理nodejs
+## 安装/管理 nodejs
 
 查看本地安装的所有版本；有可选参数 `available`，显示所有可下载的版本:
 

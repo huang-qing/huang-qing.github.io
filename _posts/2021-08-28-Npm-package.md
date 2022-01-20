@@ -111,7 +111,26 @@ ts `.d` 文件的路径
 
 ## scripts
 
-scripts 也基本上每天都用了，但是它的钩子脚本你用过吗？如果没有用过，可以试试，在组织脚本流程时非常好用！
+每次在运行 scripts 中的一个属性时候(npm run),实际系统都会自动新建一个shell(一般是Bash)，在这个shell里面执行指定的脚本命令。因此凡是能在 shell 中允许的脚本，都可以写在npm scripts中。
+
+> `npm run 新建的 shell`，会在当前目录的 `node_modules/.bin` 子目录加入到 PATH 变量，执行结束后，再将 PATH 变量恢复原样。也就是说，当前项目目录`node_modules/.bin` 子目录中所有的脚本，都可以直接用脚本名称调用，不需要增加路径.（简单总结：通过 npm 启动的脚本，会默认把 `node_modules/.bin` 加到 PATH 环境变量中。）
+
+### 脚本默认值
+
+```shell
+"start": "node server.js"
+"install": "node-gyp rebuild"
+```
+
+### 钩子(生命周期)
+
+`npm` 脚本有两个钩子，`pre` 和 `post`，当我们执行`start`脚本时候，`start` 的钩子就是 `prestart` 和 `poststart`。
+
+当我们执行 `npm run start` 的时候，`npm` 会自动按照下面的顺序执行:
+
+```shell
+npm run prestart && npm run start && npm run poststart
+```
 
 - `pre`：在一个 script 执行前执行，比如 prebuild，可以在打包前做一些准备工作。
 - `post`：在一个 script 执行后执行，比如 postbuild，可以在打包后做一些收尾工作。
@@ -135,7 +154,10 @@ scripts 也基本上每天都用了，但是它的钩子脚本你用过吗？如
 `dependencies`可以理解为**生产依赖**，通过`npm install --save`安装的依赖包都会进入到 dependencies 中。
 
 ```shell
-npm install packageName --save
+# 安装当前npm仓库中这个包的最新版本
+npm install/i packageName -S/--save
+# 如果要指定版本的，可以把版本号写在包名后面
+npm i packageName@3.0.1 -S
 ```
 
 ```json
@@ -169,7 +191,7 @@ npm install packageName --save
 `devDependencies`可以理解为**开发环境依赖**，通常是一些工具类的包，比如 webpack, babel 等。通过`npm install --save-dev`安装的依赖包都会进入到`devDependencies`中。
 
 ```shell
-npm install packageName --save-dev
+npm install/i packageName -D/--save-dev
 ```
 
 ### peerDependencies
@@ -230,5 +252,5 @@ try {
 ## 参考
 
 - [这还是我最熟悉的 package.json 吗？](https://cloud.tencent.com/developer/article/1819328)
-
 - [package.json 中你还不清楚的 browser，module，main 字段优先级](https://www.cnblogs.com/qianxiaox/p/14041717.html)
+- [你应该知道的 NPM 知识都在这！](https://mp.weixin.qq.com/s/sRhuMQ3f6vjUkabUy_dEYQ)
