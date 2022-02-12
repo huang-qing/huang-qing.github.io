@@ -6,7 +6,7 @@ date: 2022-01-11
 author: huangqing
 header-img: img/post-bg-npm.jpg
 catalog: true
-categories: [Web]
+categories: [NPM]
 tags:
   - npm
 ---
@@ -113,13 +113,31 @@ verdaccio
 - 禁止用户注册（在团队成员已注册完成后）
 - 限制 npm 包的查看，只能为已注册的用户
 
+uplinks常用仓储有:
+
+```shell
+npmjs:
+url: https://registry.npmjs.org
+yarnjs:
+url: https://registry.yarnpkg.com
+cnpmjs:
+url: https://registry.npm.taobao.org
+```
+
 ```yaml
+storage: ./storage
+plugins: ./plugins
+web:
+  title: Verdaccio
 auth:
   htpasswd:
     file: ./htpasswd
     # Maximum amount of users allowed to register, defaults to "+inf".
     # You can set this to -1 to disable registration.
     max_users: -1
+uplinks:
+  npmjs:
+    url: https://registry.npmjs.org/
 packages:
   "@*/*":
     access: $authenticated

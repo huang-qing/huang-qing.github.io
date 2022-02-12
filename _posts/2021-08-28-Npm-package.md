@@ -6,7 +6,7 @@ date: 2021-08-28
 author: huangqing
 header-img: img/post-bg-npm.jpg
 catalog: true
-categories: [Web]
+categories: [NPM]
 tags:
   - npm
 ---
@@ -14,6 +14,8 @@ tags:
 ![npm package.json mindmap](/images/npm/npm-v7-package.png)
 
 [npm package.json v7](https://docs.npmjs.com/cli/v7/configuring-npm/package-json#private)
+
+[npm semver calculator](https://semver.npmjs.com/)
 
 ## files
 
@@ -80,7 +82,7 @@ ts `.d` 文件的路径
 {
   "publishConfig": {
     "registry": "https://xxxx/repository/xxx/"
-  },
+  }
 }
 ```
 
@@ -111,7 +113,7 @@ ts `.d` 文件的路径
 
 ## scripts
 
-每次在运行 scripts 中的一个属性时候(npm run),实际系统都会自动新建一个shell(一般是Bash)，在这个shell里面执行指定的脚本命令。因此凡是能在 shell 中允许的脚本，都可以写在npm scripts中。
+每次在运行 scripts 中的一个属性时候(npm run),实际系统都会自动新建一个 shell(一般是 Bash)，在这个 shell 里面执行指定的脚本命令。因此凡是能在 shell 中允许的脚本，都可以写在 npm scripts 中。
 
 > `npm run 新建的 shell`，会在当前目录的 `node_modules/.bin` 子目录加入到 PATH 变量，执行结束后，再将 PATH 变量恢复原样。也就是说，当前项目目录`node_modules/.bin` 子目录中所有的脚本，都可以直接用脚本名称调用，不需要增加路径.（简单总结：通过 npm 启动的脚本，会默认把 `node_modules/.bin` 加到 PATH 环境变量中。）
 
@@ -161,29 +163,28 @@ npm i packageName@3.0.1 -S
 ```
 
 ```json
-{ 
-  "dependencies" :{ 
-    "foo" : "1.0.0 - 2.9999.9999", // 指定版本范围
-    "bar" : ">=1.0.2 <2.1.2", 
-    "baz" : ">1.0.2 <=2.3.4", 
-    "boo" : "2.0.1", // 指定版本
-    "qux" : "<1.0.0 || >=2.3.1 <2.4.5 || >=2.5.2 <3.0.0", 
-    "asd" : "http://asdf.com/asdf.tar.gz", // 指定包地址
-    "til" : "~1.2",  // 最近可用版本
-    "elf" : "~1.2.3", 
-    "elf" : "^1.2.3", // 兼容版本
-    "two" : "2.x", // 2.1、2.2、...、2.9皆可用
-    "thr" : "*",  // 任意版本
+{
+  "dependencies": {
+    "foo": "1.0.0 - 2.9999.9999", // 指定版本范围
+    "bar": ">=1.0.2 <2.1.2",
+    "baz": ">1.0.2 <=2.3.4",
+    "boo": "2.0.1", // 指定版本
+    "qux": "<1.0.0 || >=2.3.1 <2.4.5 || >=2.5.2 <3.0.0",
+    "asd": "http://asdf.com/asdf.tar.gz", // 指定包地址
+    "til": "~1.2", // 最近可用版本
+    "elf": "~1.2.3",
+    "elf": "^1.2.3", // 兼容版本
+    "two": "2.x", // 2.1、2.2、...、2.9皆可用
+    "thr": "*", // 任意版本
     "thr2": "", // 任意版本
-    "lat" : "latest", // 当前最新
-    "dyl" : "file:../dyl", // 本地地址
-    "xyz" : "git+ssh://git@github.com:npm/npm.git#v1.0.27", // git 地址
-    "fir" : "git+ssh://git@github.com:npm/npm#semver:^5.0",
-    "wdy" : "git+https://isaacs@github.com/npm/npm.git",
-    "xxy" : "git://github.com/npm/npm.git#v1.0.27",
+    "lat": "latest", // 当前最新
+    "dyl": "file:../dyl", // 本地地址
+    "xyz": "git+ssh://git@github.com:npm/npm.git#v1.0.27", // git 地址
+    "fir": "git+ssh://git@github.com:npm/npm#semver:^5.0",
+    "wdy": "git+https://isaacs@github.com/npm/npm.git",
+    "xxy": "git://github.com/npm/npm.git#v1.0.27"
   }
 }
-
 ```
 
 ### devDependencies
@@ -198,7 +199,7 @@ npm install/i packageName -D/--save-dev
 
 同等依赖，或者叫同伴依赖，用于指定当前包（也就是你写的包）兼容的宿主版本。
 
-例如，我们编写一个gulp的插件，而gulp却有多个主版本，我们只想兼容最新的版本，此时就可以用同等依赖（peerDependencies）来指定：
+例如，我们编写一个 gulp 的插件，而 gulp 却有多个主版本，我们只想兼容最新的版本，此时就可以用同等依赖（peerDependencies）来指定：
 
 ```json
 {
@@ -212,7 +213,7 @@ npm install/i packageName -D/--save-dev
 
 当别人使用我们的插件时，`peerDependencies`就会告诉明确告诉使用方，你需要安装该插件哪个宿主版本。
 
-通常情况下，我们会在一个项目里使用一个宿主（比如gulp）的很多插件，如果相互之间存在宿主不兼容，在执行`npm install`时，`cli`会抛出错误信息来告诉我们，比如：
+通常情况下，我们会在一个项目里使用一个宿主（比如 gulp）的很多插件，如果相互之间存在宿主不兼容，在执行`npm install`时，`cli`会抛出错误信息来告诉我们，比如：
 
 ```shell
 npm ERR! peerinvalid The package gulp does not satisfy its siblings' peerDependencies requirements!'
@@ -236,7 +237,7 @@ npm ERR! peerinvalid Peer gulp-cli-users@0.1.4 wants gulp@~2.3.0
 
 ### optionalDependencies
 
-可选依赖，如果有一些依赖包即使安装失败，项目仍然能够运行或者希望npm继续运行，就可以使用`optionalDependencies`。另外`optionalDependencies`会覆盖`dependencies`中的同名依赖包，所以不要在两个地方都写。
+可选依赖，如果有一些依赖包即使安装失败，项目仍然能够运行或者希望 npm 继续运行，就可以使用`optionalDependencies`。另外`optionalDependencies`会覆盖`dependencies`中的同名依赖包，所以不要在两个地方都写。
 
 `optionalDependencies`用于配置可选的依赖，即使配了这个，代码里也要做好判断（保护），否则运行报错就不好玩了。
 
@@ -249,8 +250,43 @@ try {
 }
 ```
 
+## funding
+
+指定一个包含 URL 的对象，该 URL 提供有关帮助资助包开发的方法的最新信息，或字符串 URL，或以下数组：
+
+```json
+{
+  "funding": {
+    "type": "individual",
+    "url": "http://example.com/donate"
+  },
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/my-account"
+  },
+  "funding": "http://example.com/donate",
+  "funding": [
+    {
+      "type": "individual",
+      "url": "http://example.com/donate"
+    },
+    "http://example.com/donateAlso",
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/my-account"
+    }
+  ]
+}
+```
+
+```shell
+npm fund
+npm fund <projectname>
+```
+
 ## 参考
 
+- [package.json](https://docs.npmjs.com/cli/v8/configuring-npm/package-json)
 - [这还是我最熟悉的 package.json 吗？](https://cloud.tencent.com/developer/article/1819328)
 - [package.json 中你还不清楚的 browser，module，main 字段优先级](https://www.cnblogs.com/qianxiaox/p/14041717.html)
 - [你应该知道的 NPM 知识都在这！](https://mp.weixin.qq.com/s/sRhuMQ3f6vjUkabUy_dEYQ)
