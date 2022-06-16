@@ -11,6 +11,8 @@ tags:
   - nodejs
 ---
 
+![vite cli](/images/cli/vite-create-app.png)
+
 ## 入门须知
 
 - [commander](https://github.com/tj/commander.js) （实现 NodeJS 命令行）
@@ -68,6 +70,90 @@ npx vite -v
 npx @vue/cli create vue-project
 # @vue/cli 相比 npm init vue@next / npx create-vue@next 很慢。
 ```
+
+## 文件目录
+
+```doc
+js-plugin-cli
+├─ .gitignore
+├─ .npmignore 
+├─ .prettierrc 
+├─ LICENSE
+├─ README.md
+├─ bin
+│  └─ index.js
+├─ lib
+│  ├─ init.js
+│  ├─ config.js
+│  ├─ download.js
+│  ├─ mirror.js
+│  └─ update.js
+└─ package.json
+```
+
+## 注册指令
+
+当我们要运行调试脚手架时，通常执行 `node ./bin/index.js` 命令.使用cli时通常使用注册的指令。
+
+打开 package.json 文件，先注册下指令：
+
+```json
+ "name": "create-v",
+ "main": "./bin/index.js",
+  "bin": {
+    "create-v": "./bin/index.js"
+  },
+
+```
+
+`bin` 下的 `create-v` 就是我们注册的指令,名称尽可能的简介，如 vue vite
+
+## 实现一个简单的cli
+
+让 `create-v -v` 这个命令能够在终端打印出来。
+
+打开 `bin/index.js` 文件，编写以下代码:
+
+```js
+#!/usr/bin/env node
+
+// 请求 commander 库
+const program = require('commander')
+
+// 从 package.json 文件中请求 version 字段的值，-v和--version是参数
+// 命令行执行 create-v template -v
+program.version(require('../package.json').version, '-v, --version')
+
+// 命令行执行 create-v template
+program
+  .command('template')
+  .description(
+    'Download template from gitlab.'
+  )
+  .action(() => {
+    //TODO:download
+  });
+
+// 命令行执行 create-v project_name  或 npx init v project_name
+program
+  .argument('<project_name>', 'create a project')
+  .action((project) => {
+    //TDDO:create
+  });
+
+// 解析命令行参数
+program.parse(process.argv)
+
+```
+
+其中 `#!/usr/bin/env node` （固定第一行）必加，主要是让系统看到这一行的时候，会沿着对应路径查找 `node` 并执行
+
+调试阶段时，为了保证 `create-v` 指令可用，需要在项目下执行 `npm link`（不需要指令时用 `npm unlink` 断开）;
+
+link 完后,我们可以通过`npm ls -g`查看是否成功(有当前文件夹被映射到全局包中说明 link 成功)
+
+测试完成后， 使用 `npm uninstall create-v -g` 对关联进行解绑
+
 
 ## 参考
 
