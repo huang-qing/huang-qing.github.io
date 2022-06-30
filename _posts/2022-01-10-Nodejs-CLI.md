@@ -17,13 +17,17 @@ tags:
 
 - [commander](https://github.com/tj/commander.js) （实现 NodeJS 命令行）
 - [minimist](https://www.npmjs.com/package/minimist) 轻量级的用于解析命令行参数的工具
+- [yargs](https://github.com/yargs/yargs) Yargs be a node.js library fer hearties tryin' ter parse optstrings
+- [meow](https://github.com/sindresorhus/meow)
 
 - [inquirer](https://www.npmjs.com/package/inquirer) （实现命令行之间的交互）
+- [prompts](https://github.com/terkelg/prompts) : 让命令行与用户进行交互的工具,与 Inquirer.js 功能差不多。
 - [enquirer](https://www.npmjs.com/package/enquirer)命令行的提示
 
 - [chalk](https://www.npmjs.com/package/chalk) （控制台字符样式）
 - [kolorist](https://www.npmjs.com/package/kolorist) 轻量级的使命令行输出带有色彩的工具
 - [log-symbols](https://www.npmjs.com/package/log-symbols) （为各种日志级别提供着色符号）
+- [progress](https://github.com/visionmedia/node-progress) 命令行进度条
 
 - [download](https://www.npmjs.com/package/download) （实现文件远程下载）
 - [fs-extra](https://www.npmjs.com/package/fs-extra) （增强的基础文件操作库）
@@ -31,6 +35,26 @@ tags:
 
 - [ora](https://www.npmjs.com/package/ora) （优雅终端 Spinner 等待动画）
 - [update-notifier](https://www.npmjs.com/package/update-notifier) （npm 在线检查更新）
+
+- [shelljs](https://github.com/shelljs/shelljs) 跨平台 Unix shell 命令 的 node 封装
+- [cash](https://github.com/dthree/cash): 跨平台 linux 命令 的 node 封装, 与 shelljs 功能差不多。
+- [blessed-contrib](https://github.com/yaronn/blessed-contrib)  命令行图表
+
+更多关于命令行的工具库可以参考 [command-line-utilities](https://github.com/sindresorhus/awesome-nodejs#command-line-utilities)。
+
+## 比较常用的命令行 APP
+
+`babel`、`webpack`、`rollup`、`eslint` 等，但这些不仅仅是命令行工具。
+
+下面介绍一些纯命令行应用：
+
++ [vtop](https://github.com/MrRio/vtop): 美美的 linux top 命令界面
++ [speed-test](https://github.com/sindresorhus/speed-test): 测试网络链接速度
++ [http-server](https://github.com/http-party/http-server): 零配置启动一个 http 服务器
++ [fkill-cli](https://github.com/sindresorhus/fkill-cli): 跨平台 kill 命令
+
+更多纯命令行应用可以参考 [command-line-apps](https://github.com/sindresorhus/awesome-nodejs#command-line-apps)。
+
 
 ## npm init && npx
 
